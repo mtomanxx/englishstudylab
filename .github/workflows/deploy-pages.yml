@@ -1,0 +1,45 @@
+name: Publish English Study Lab
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: english-study-lab-pages
+  cancel-in-progress: false
+
+jobs:
+  assemble:
+    name: Verify and assemble the complete website
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Read the public delivery package
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Restore and verify every website file
+        run: python3 assemble-site.py
+      - name: Upload the verified website
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+          retention-days: 1
+
+  deploy:
+    name: Publish to GitHub Pages
+    needs: assemble
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publish the verified website
+        id: deployment
+        uses: actions/deploy-pages@v4
