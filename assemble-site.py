@@ -11,7 +11,9 @@ from urllib.error import HTTPError, URLError
 from urllib.parse import quote, urlparse
 from urllib.request import Request, urlopen
 
-ALLOWED_ORIGIN = "https://toman-yds-study-lab.mtoman.chatgpt.site"
+ALLOWED_ORIGIN = "https://mtomanxx.github.io"
+ALLOWED_SITE_PATH = "/englishstudylab/"
+SOURCE_BASE = ALLOWED_ORIGIN + ALLOWED_SITE_PATH.rstrip("/")
 
 
 def safe_path(value):
@@ -40,7 +42,7 @@ def main():
     args = parser.parse_args()
     root = Path(__file__).resolve().parent
     manifest = json.loads((root / "asset-manifest.json").read_text(encoding="utf-8"))
-    if manifest["format"] != 1 or manifest["source_base"] != ALLOWED_ORIGIN:
+    if manifest["format"] != 1 or manifest["source_base"] != SOURCE_BASE:
         raise ValueError("Unexpected package format or source origin")
     expected = {}
     for spec in manifest["files"]:
@@ -77,13 +79,13 @@ def main():
         if args.local_assets:
             data = (args.local_assets / spec["path"]).read_bytes()
         else:
-            url = ALLOWED_ORIGIN + "/" + quote(spec["path"], safe="/")
+            url = SOURCE_BASE + "/" + quote(spec["path"], safe="/")
             for attempt in range(3):
                 try:
                     request = Request(url, headers={"User-Agent": "EnglishStudyLab-GitHubPages-Migration/1.0", "Accept-Encoding": "identity"})
                     with urlopen(request, timeout=60) as response:
                         final = urlparse(response.geturl())
-                        if response.status != 200 or f"{final.scheme}://{final.netloc}" != ALLOWED_ORIGIN:
+                        if response.status != 200 or f"{final.scheme}://{final.netloc}" != ALLOWED_ORIGIN or not final.path.startswith(ALLOWED_SITE_PATH):
                             raise ValueError(f"Unexpected HTTP response for {spec['path']}")
                         length = response.headers.get("Content-Length")
                         if length is not None and int(length) != spec["size"]:
