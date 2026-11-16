@@ -141,6 +141,47 @@ def apply_phrasal_overlay(root, output):
     print(f"Verified phrasal overlay: {len(seen)} files", flush=True)
 
 
+def apply_golden_exam_overlay(root, output):
+    marker = root / "golden-exam-overlay.json"
+    if not marker.exists():
+        return
+    data = json.loads(marker.read_text(encoding="utf-8"))
+    if data.get("version") != 1 or data["archive"]["filename"] != "golden-exam-overlay.tar.gz":
+        raise ValueError("Invalid golden exam overlay specification")
+    exact = {"index.html", "practice/index.html", "practice/practice.js",
+             "phrasal-verbs/index.html", "membership/index.html",
+             "assets/index-af0557abe4eb.js", "assets/esl-golden-theme.css",
+             "practice/release.json"}
+    replacements = exact - {"assets/esl-golden-theme.css", "practice/release.json"}
+    expected = {}
+    for spec in data["files"]:
+        path = spec["path"]
+        safe_path(path)
+        if path not in exact or path in expected:
+            raise ValueError(f"Unexpected golden exam output: {path}")
+        before = output / path
+        if path in replacements:
+            verified_bytes(before.read_bytes(), spec["previous"])
+        elif before.exists():
+            raise ValueError(f"Golden exam overlay would overwrite an existing file: {path}")
+        expected[path] = spec
+    if set(expected) != exact:
+        raise ValueError("Golden exam overlay file set mismatch")
+    verified_bytes((root / data["archive"]["filename"]).read_bytes(), data["archive"])
+    seen = set()
+    with tarfile.open(root / data["archive"]["filename"], mode="r:gz") as archive:
+        for member in archive:
+            safe_path(member.name)
+            spec = expected.get(member.name)
+            if spec is None or member.name in seen or not member.isfile() or member.size != spec["size"]:
+                raise ValueError(f"Unexpected golden exam archive member: {member.name}")
+            write_verified(output, archive.extractfile(member).read(spec["size"] + 1), spec)
+            seen.add(member.name)
+    if seen != exact:
+        raise ValueError("Golden exam overlay archive did not contain all declared files")
+    print(f"Verified golden exam workbook overlay: {len(seen)} files", flush=True)
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, default=Path("_site"))
@@ -235,6 +276,7 @@ def main():
     print("Textbook overlay added; verified content and media are unchanged", flush=True)
     apply_course_overlay(root, output)
     apply_phrasal_overlay(root, output)
+    apply_golden_exam_overlay(root, output)
 
 
 if __name__ == "__main__":
