@@ -35,6 +35,28 @@ def write_verified(output, data, spec):
     target.write_bytes(verified_bytes(data, spec))
 
 
+def apply_textbook_overlay(root, output):
+    """Layer readable, versioned presentation files onto the verified course."""
+    entry = output / "index.html"
+    template = entry.read_text(encoding="utf-8")
+    marker = "  </head>"
+    if template.count(marker) != 1 or 'id="root"' not in template:
+        raise ValueError("Unexpected entry point for the textbook overlay")
+    tags = []
+    for name, element in (
+        ("textbook.css", '<link rel="stylesheet" href="{path}">'),
+        ("textbook.js", '<script defer src="{path}"></script>'),
+    ):
+        artifact = output / "assets" / name
+        if artifact.exists():
+            raise ValueError(f"Textbook asset already exists: {name}")
+        data = (root / "book-overlay" / name).read_bytes()
+        version = hashlib.sha256(data).hexdigest()[:12]
+        artifact.write_bytes(data)
+        tags.append("    " + element.format(path=f"assets/{name}?v={version}"))
+    entry.write_text(template.replace(marker, "\n".join(tags) + "\n" + marker), encoding="utf-8")
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, default=Path("_site"))
@@ -125,6 +147,8 @@ def main():
     if total != manifest["summary"]["total_bytes"] or audio_count != manifest["summary"]["mp3_count"]:
         raise ValueError("Final artifact summary mismatch")
     print(f"Complete artifact verified: {len(actual)} files, {audio_count} MP3s, {total} bytes", flush=True)
+    apply_textbook_overlay(root, output)
+    print("Textbook overlay added; verified content and media are unchanged", flush=True)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,288 @@
+/* English Study Lab / editorial textbook edition
+   Loaded after the original app stylesheet; media, lessons and scoring are unchanged. */
+:root {
+  --esl-paper: #f8f5ea;
+  --esl-blank: #fffcf3;
+  --esl-ink: #202e29;
+  --esl-muted: #52635a;
+  --esl-pine: #164c3d;
+  --esl-pine-deep: #123a30;
+  --esl-gold: #f7d25c;
+  --esl-rule: #c9d0c1;
+  --esl-serif: Georgia, "Times New Roman", serif;
+  --esl-sans: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.ac-site {
+  --ac-ink: var(--esl-ink);
+  --ac-paper: var(--esl-paper);
+  --ac-blue: var(--esl-pine);
+  --ac-yellow: var(--esl-gold);
+  --ac-orange: #f9aa73;
+  background: var(--esl-paper);
+  font: 1rem/1.65 var(--esl-sans);
+}
+
+.ac-site :where(button, a, input, select, textarea):focus-visible,
+.lab-shell :where(button, a, input, select, textarea):focus-visible {
+  outline: 3px solid #137b60;
+  outline-offset: 4px;
+}
+.ac-site .ac-utility {
+  background: var(--esl-pine-deep);
+  color: #fcf8df;
+  letter-spacing: .16em;
+}
+.ac-site .ac-header {
+  min-height: 76px;
+  padding-block: 12px;
+  background: var(--esl-blank);
+  border-bottom: 1px solid var(--esl-rule);
+}
+.ac-site .ac-logo { font: bold 1rem/1.02 var(--esl-serif); }
+.ac-site .ac-logo-mark { transform: none; border-radius: 3px 7px 7px 3px; }
+.ac-site .ac-navigation button.is-active { color: var(--esl-pine); }
+.ac-site .ac-exams-link { border-radius: 3px; }
+
+.ac-site .ac-hero {
+  margin: clamp(26px, 4vw, 62px) auto 0;
+  width: min(89%, 1330px);
+  padding: clamp(30px, 4vw, 70px);
+  align-items: center;
+  gap: clamp(24px, 4vw, 70px);
+  grid-template-columns: 1.15fr .85fr;
+  border: 1px solid #9eb7a0;
+  background: linear-gradient(115deg, #f0efde 8%, #e5efdb 100%);
+  border-radius: 4px 10px 10px 4px;
+  box-shadow: inset 7px 0 0 var(--esl-pine), inset 11px 0 #a0bb9d,
+              0 4px 0 #d5dbcd, 0 8px 0 #fdfbed, 0 9px 0 #c7d3c2;
+}
+.ac-site .ac-hero-copy { min-width: 0; }
+.esl-book-imprint {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 12px;
+  align-items: center;
+  margin-bottom: 28px;
+  padding-bottom: 11px;
+  border-bottom: 1px solid #b2c3ac;
+  color: var(--esl-pine);
+  font: 750 .65rem/1.5 var(--esl-sans);
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+.esl-book-imprint span + span { font-weight: 550; color: #465d50; }
+.ac-site .ac-hero h1 {
+  white-space: normal;
+  font: 600 clamp(3.15rem, 6.25vw, 6.4rem)/.94 var(--esl-serif);
+  letter-spacing: -.065em;
+}
+.ac-site .ac-hero h1 em { color: var(--esl-pine); letter-spacing: -.07em; }
+.ac-site .ac-hero h1 em::after { opacity: .6; }
+.ac-site .ac-hero-description {
+  color: var(--esl-muted);
+  font-size: clamp(.95rem, 1.35vw, 1.14rem);
+  line-height: 1.65;
+}
+.ac-site .ac-hero-buttons { gap: 12px; flex-wrap: wrap; }
+.ac-site .ac-hero-footnote { border-color: #bacbb7; }
+.ac-site .ac-hero-visual { max-width: 480px; padding: 0; }
+.ac-site .ac-hero-image {
+  object-position: center;
+  max-height: 455px;
+  width: 100%;
+  transform: none;
+  border: 1px solid #475e4e;
+  border-radius: 3px 8px 8px 3px;
+  box-shadow: 5px 6px 0 #fffdf5, 6px 7px 0 #b0c4a8, 10px 11px 0 #8ba689;
+}
+.ac-site .ac-art-caption { padding: 6px 10px; top: 12px; left: 12px; transform: none; border: 1px solid #afc2ac; }
+.ac-site .ac-art-arrow { width: 22px; height: 22px; }
+.ac-site .ac-hero-stamp {
+  background: var(--esl-gold);
+  left: -12px;
+  bottom: 30px;
+  transform: rotate(-3deg);
+  padding: 9px 12px;
+}
+.ac-site .ac-hero-stamp strong { font-size: 2.3rem; letter-spacing: -.045em; }
+.ac-site .ac-image-label { transform: none; margin-top: 15px; color: #395445; }
+.esl-book-det {
+  margin: 10px 0 0;
+  padding: 4px 0;
+  border-bottom: 1px solid #799e8b;
+  background: transparent;
+  color: var(--esl-pine);
+  font-size: .82rem !important;
+  font-weight: 700 !important;
+  text-align: left;
+}
+.esl-book-det::after { content: " ↗"; }
+.esl-book-det:hover { border-color: currentColor; }
+
+.esl-book-contents {
+  width: min(89%, 1330px);
+  margin: 30px auto 16px;
+  padding: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 20px;
+  border-bottom: 1px solid var(--esl-rule);
+  color: var(--esl-pine);
+}
+.esl-book-contents-title {
+  font: italic 600 1.3rem/1.4 var(--esl-serif);
+  margin-right: .55rem;
+}
+.esl-book-contents a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 0;
+  color: var(--esl-ink);
+  font-size: .78rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+.esl-book-contents a:hover { text-decoration: underline; text-underline-offset: .22em; }
+.esl-book-contents small { color: #376753; font-size: .62rem; letter-spacing: .05em; font-variant-numeric: tabular-nums; }
+[id^="esl-"] { scroll-margin-top: 1.35rem; }
+
+.ac-site .ac-level-band {
+  width: min(89%, 1330px);
+  margin: 26px auto 0;
+  padding: clamp(16px, 3vw, 28px);
+  border: 1px solid var(--esl-rule);
+  background: #efe9ce;
+  border-radius: 6px;
+}
+.ac-site .ac-level-options button {
+  border: 1px solid #aab8a4;
+  background: var(--esl-blank);
+  border-radius: 4px 4px 2px 2px;
+  box-shadow: inset 0 3px 0 #c9d3b8;
+}
+.ac-site .ac-level-options button.is-selected {
+  background: var(--esl-pine);
+  color: #fff9e4;
+  box-shadow: inset 0 3px 0 #90b298;
+}
+.ac-site .ac-level-options b { font-family: var(--esl-serif); }
+
+.ac-site :is(.ac-section-heading, .ac-catalogue-heading, .ac-level-band) h2,
+.ac-site .ac-method h2,
+.ac-site .ac-exam-section h2 {
+  font-family: var(--esl-serif);
+  letter-spacing: -.035em;
+}
+.ac-site .ac-skill-grid {
+  gap: clamp(14px, 2.2vw, 26px);
+}
+.ac-site .ac-skill-cover {
+  background: var(--chapter-paper, #dcead8);
+  border: 1px solid #929b89;
+  border-radius: 3px 10px 10px 3px;
+  box-shadow: inset 6px 0 0 var(--chapter-spine, #307763),
+              2px 3px 0 #fdfbef, 3px 4px 0 #c6ccbd;
+  padding-inline: clamp(15px, 2vw, 26px);
+}
+.ac-site .ac-skill-cover:nth-child(2) { --chapter-paper: #f5dfb3; --chapter-spine: #ab6734; }
+.ac-site .ac-skill-cover:nth-child(3) { --chapter-paper: #dce6f4; --chapter-spine: #506ca7; }
+.ac-site .ac-skill-cover:nth-child(4) { --chapter-paper: #f4dcd6; --chapter-spine: #a34b4f; }
+.ac-site .ac-skill-cover:nth-child(5) { --chapter-paper: #e8e3f3; --chapter-spine: #775e9e; }
+.ac-site .ac-skill-cover:nth-child(6) { --chapter-paper: #f3ebba; --chapter-spine: #8b750e; }
+.ac-site .ac-skill-cover:hover {
+  box-shadow: inset 6px 0 0 var(--chapter-spine, #307763), 3px 5px 0 #9ba88e;
+  transform: translateY(-3px);
+}
+.ac-site .ac-skill-cover h3,
+.ac-site .ac-lesson-open h3 { font-family: var(--esl-serif); letter-spacing: -.02em; }
+.ac-site .ac-cover-top, .ac-site .ac-cover-bottom { color: #304238; }
+.ac-site .ac-cover-art { color: var(--chapter-spine, #307763); }
+.ac-site .ac-cover-bottom { border-color: #7b8979; }
+.ac-site .ac-lesson-card {
+  border-color: var(--esl-rule);
+  background: var(--esl-blank);
+  border-radius: 4px;
+  box-shadow: 0 2px 0 #e6e8d8;
+  overflow: hidden;
+}
+.ac-site .ac-lesson-card::before { height: 3px; }
+.ac-site .ac-lesson-open p { color: var(--esl-muted); font-size: .86rem; }
+.ac-site .ac-method { background: var(--esl-pine-deep); }
+.ac-site .ac-footer { background: #1d3027; }
+.ac-site .ac-footer a { text-decoration-thickness: 1px; }
+.ac-site .ac-lesson-reader { background: var(--esl-paper); }
+
+.lab-shell {
+  --lab-ink: var(--esl-ink);
+  --lab-purple: var(--esl-pine);
+  --lab-muted: var(--esl-muted);
+  --lab-border: var(--esl-rule);
+  background: var(--esl-paper);
+  font-family: var(--esl-sans);
+}
+.lab-shell .lab-sidebar, .lab-shell .lab-topbar { background: var(--esl-blank); }
+.lab-shell .lab-sidebar { box-shadow: 3px 0 0 #eae8d8; }
+.lab-shell .lab-card, .lab-shell .lab-goal-card, .lab-shell .lab-test-card, .lab-shell .lab-panel {
+  border: 1px solid var(--esl-rule);
+  background: var(--esl-blank);
+  border-radius: 6px;
+}
+.lab-shell .lab-test-card { border-left: 4px solid var(--esl-pine); box-shadow: 0 3px #e1e4d4; }
+.lab-shell .lab-content :is(h1, h2, h3) { font-family: var(--esl-serif); letter-spacing: -.025em; }
+.lab-shell .lab-hero, .lab-shell .lab-video-promo { background: var(--esl-pine-deep); color: #fff9e4; border-radius: 8px; }
+.lab-shell .lab-hero h2 em { color: var(--esl-gold); }
+.lab-shell .lab-btn:not(.secondary):not(.white) { background: var(--esl-pine); color: #fff; }
+.lab-shell .lab-btn:not(.secondary):not(.white):hover { background: var(--esl-pine-deep); }
+.lab-shell .lab-nav.active { background: #dbe8db; color: var(--esl-pine-deep); }
+.lab-shell .lab-link { color: var(--esl-pine); }
+
+.esl-book-membership {
+  align-self: center;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 7px 12px;
+  border: 1px solid #96ad98;
+  border-radius: 3px;
+  color: var(--esl-pine-deep);
+  background: #e5ebd9;
+  font: 700 .74rem/1.2 var(--esl-sans);
+  text-decoration: none;
+}
+.esl-book-membership:hover { background: #d8e5d2; }
+.esl-book-membership[hidden] { display: none !important; }
+.lab-sidebar-bottom .esl-book-membership { margin-bottom: 8px; }
+
+@media (max-width: 1100px) {
+  .ac-site .ac-hero { grid-template-columns: 1.07fr .93fr; }
+  .esl-book-imprint { margin-bottom: 18px; }
+}
+@media (max-width: 760px) {
+  .ac-site .ac-hero { grid-template-columns: 1fr; gap: 26px; width: 90%; }
+  .ac-site .ac-hero h1 { font-size: clamp(2.9rem, 9.2vw, 4.45rem); }
+  .ac-site .ac-hero-visual { width: min(100%, 370px); justify-self: center; }
+  .ac-site .ac-hero-image { max-height: none; }
+  .ac-site .ac-level-band { align-items: stretch; width: 90%; gap: 12px; }
+  .esl-book-contents { width: 90%; gap: 4px 14px; }
+  .esl-book-contents-title { flex-basis: 100%; }
+}
+@media (max-width: 479px) {
+  .ac-site .ac-hero { padding: 24px 20px 23px 24px; }
+  .ac-site .ac-hero-description br { display: none; }
+  .ac-site .ac-header-actions { gap: 6px; }
+  .ac-site .esl-book-membership { padding-inline: 7px; font-size: .62rem; }
+  .ac-site .ac-exams-link { padding-inline: 7px; }
+  .ac-site .ac-hero-stamp { left: -8px; padding: 6px 8px; }
+  .ac-site .ac-hero-stamp strong { font-size: 1.75rem; }
+  .ac-site .ac-hero-stamp span { font-size: .46rem; }
+  .ac-site .ac-hero-footnote { align-items: flex-start; }
+  .ac-site .ac-cover-bottom > span { gap: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ac-site .ac-skill-cover { transition: none; }
+  .ac-site .ac-skill-cover:hover { transform: none; }
+}
