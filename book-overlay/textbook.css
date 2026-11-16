@@ -286,3 +286,9 @@
   .ac-site .ac-skill-cover { transition: none; }
   .ac-site .ac-skill-cover:hover { transform: none; }
 }
+
+/* Front matter defines the path from the coursebook to the workbook. */
+.esl-book-contents .esl-book-part{flex-basis:100%;margin:.25rem 0;color:#354e61;font-size:.74rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.esl-book-contents .esl-book-workbook{justify-self:start;background:#e9f1ff;padding:.32rem .6rem;border-left:3px solid #2453a1;border-radius:.25rem;color:#173c78}
+.esl-book-det{display:inline-flex;align-items:center;min-height:2.65rem;padding:.3rem .7rem;margin-top:.75rem;color:#173c78;background:#e9f1ff;border:1px solid #9ab6dd;border-radius:.25rem;text-decoration:none}
+.esl-book-det:hover{background:#e0ebff}.esl-book-det::after{content:" →";padding-inline-start:.3rem}

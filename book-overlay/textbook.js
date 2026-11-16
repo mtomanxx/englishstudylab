@@ -21,20 +21,15 @@
     container.prepend(link);
   }
 
-  function addCover(site, cover) {
+  function addCover(cover) {
     if (take(cover, ".esl-book-imprint")) return;
     const imprint = make("div", "esl-book-imprint");
     imprint.append(make("span", "", "English Study Lab"), make("span", "", "Independent Learning Series"));
     cover.prepend(imprint);
     const actions = take(cover, ".ac-hero-buttons");
     if (actions) {
-      const det = make("button", "esl-book-det", "Duolingo practice");
-      det.type = "button";
-      det.addEventListener("click", () => {
-        const destination = [...site.querySelectorAll(".ac-exam-links button")]
-          .find((button) => button.querySelector("b")?.textContent === "Duolingo English Test");
-        destination?.click();
-      });
+      const det = make("a", "esl-book-det", "Open the practice workbook");
+      det.href = new URL("practice/", assets).href;
       actions.after(det);
     }
   }
@@ -49,7 +44,8 @@
     if (existing) return;
     const list = make("nav", "esl-book-contents");
     list.setAttribute("aria-label", "Textbook contents");
-    list.append(make("span", "esl-book-contents-title", "Contents"));
+    list.append(make("span", "esl-book-contents-title", "Table of contents"));
+    list.append(make("span", "esl-book-part", "Part 1 · Coursebook"));
     const sections = [
       [".ac-level-band", "esl-volumes", "01", "Choose your level"],
       [".ac-skills-section", "esl-skills", "02", "Study by skill"],
@@ -66,6 +62,11 @@
       link.prepend(make("small", "", number));
       list.append(link);
     }
+    list.append(make("span", "esl-book-part", "Part 2 · Practice workbook"));
+    const workbook = make("a", "esl-book-workbook", "Ten C1 practice exams");
+    workbook.prepend(make("small", "", "06"));
+    workbook.href = new URL("practice/", assets).href;
+    list.append(workbook);
     level.before(list);
   }
 
@@ -74,7 +75,7 @@
     if (site) {
       addMembership(take(site, ".ac-header-actions"));
       const cover = take(site, ".ac-hero-copy");
-      if (cover) addCover(site, cover);
+      if (cover) addCover(cover);
       addContents(site);
     }
     const exam = take(root, ".lab-sidebar-bottom");
