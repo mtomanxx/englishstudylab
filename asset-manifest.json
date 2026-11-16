@@ -4,15 +4,15 @@
   "site_base_path": "/englishstudylab/",
   "core": {
     "filename": "site-core.tar.gz",
-    "size": 1345175,
-    "sha256": "ad2154994c37c215aec3abb9eb95359722b3d5463d7d2c3cd5d24d2b2940c86d"
+    "size": 22615090,
+    "sha256": "d4567b9e7fd3faea86fcaab6eebc0b3be49852241759f5bad4ee13b4b5ca784e"
   },
   "summary": {
-    "file_count": 569,
-    "total_bytes": 241164570,
-    "mp3_count": 513,
+    "file_count": 826,
+    "total_bytes": 264388697,
+    "mp3_count": 769,
     "download_count": 555,
-    "core_count": 14
+    "core_count": 271
   },
   "files": [
     {
@@ -70,15 +70,33 @@
       "source": "public"
     },
     {
-      "path": "assets/index-Bo7q2PC7.js",
-      "size": 2315294,
-      "sha256": "25eb3c8b67d9b21ca8a8001d380d8b83d82bd358879fea020ba1017e694c2984",
-      "source": "core"
-    },
-    {
       "path": "assets/index-DGCIrGSb.css",
       "size": 318009,
       "sha256": "7c1ce314959e4e5c5c9808670a882ad320ffdfddc87a1f8b4abbba43c97a3295",
+      "source": "core"
+    },
+    {
+      "path": "assets/index-af0557abe4eb.js",
+      "size": 2315380,
+      "sha256": "af0557abe4ebcae807ea48c966f7268832b28b789d871e75163ed3a6b666e49b",
+      "source": "core"
+    },
+    {
+      "path": "audio-credits.json",
+      "size": 1989,
+      "sha256": "6a6713e13ed43b355462f08570a5baf4f6c7f0b7e47492e47b6b257a627b164e",
+      "source": "core"
+    },
+    {
+      "path": "audio-library.json",
+      "size": 157330,
+      "sha256": "b46b3b2c220701653fa9695ff22ca24367c53c888a4bc8c451b367097a8586b0",
+      "source": "core"
+    },
+    {
+      "path": "audio-verification.json",
+      "size": 1447,
+      "sha256": "a9f367a5209644af56f26380e8417075ea3a2e8f7623fd7566f7a33fb155172f",
       "source": "core"
     },
     {
@@ -1732,24 +1750,6 @@
       "source": "public"
     },
     {
-      "path": "audio-credits.json",
-      "size": 1989,
-      "sha256": "6a6713e13ed43b355462f08570a5baf4f6c7f0b7e47492e47b6b257a627b164e",
-      "source": "core"
-    },
-    {
-      "path": "audio-library.json",
-      "size": 157330,
-      "sha256": "b46b3b2c220701653fa9695ff22ca24367c53c888a4bc8c451b367097a8586b0",
-      "source": "core"
-    },
-    {
-      "path": "audio-verification.json",
-      "size": 1447,
-      "sha256": "a9f367a5209644af56f26380e8417075ea3a2e8f7623fd7566f7a33fb155172f",
-      "source": "core"
-    },
-    {
       "path": "course-art/hero.png",
       "size": 3283439,
       "sha256": "50c9eb3cdf44c37f1ec5ec5d96bdd6b9d211a79d86815320c15836b63d3fde7e",
@@ -1844,6 +1844,72 @@
       "size": 1375,
       "sha256": "c5a30761462eaddeb5750294598598af9c7e75105bcfd48254ccd22735c67252",
       "source": "public"
+    },
+    {
+      "path": "exam-audio-manifest.json",
+      "size": 740223,
+      "sha256": "aa96f3ec8d70c7219681b3a2c0ae555b38554904ab8f3b64f646e88e45bfd12d",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/det-workbook-01-audio.mp3",
+      "size": 208632,
+      "sha256": "2b361bfb409642323eb9c4da40aae9b601736eb3f5cc946b0adac330bb5ae74d",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/det-workbook-02-audio.mp3",
+      "size": 193742,
+      "sha256": "981751bee5ac797546e3b0831a29b81bd496a0436aa888b38f7867b1da7165ef",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/det-workbook-03-audio.mp3",
+      "size": 188779,
+      "sha256": "6206830aa8b0cf321c5943fd79ae3c2cd6b15b5ae6ef99c53afb2bc9c51d93a4",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/det-workbook-04-audio.mp3",
+      "size": 196615,
+      "sha256": "33621e1eac1a8345b12adea0224725c62802b82c3bb350a024498b2c0f663a02",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/det-workbook-05-audio.mp3",
+      "size": 168664,
+      "sha256": "78e48527bbe582e03c5043a732d27cd0aad6f5e031b64f855738bf99747b8a35",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/det-workbook-06-audio.mp3",
+      "size": 178460,
+      "sha256": "8fcb37bcca6a079a04045f97a8d404b5586e93a452e47421d24f72d7e81dd35c",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/det-workbook-07-audio.mp3",
+      "size": 193481,
+      "sha256": "dddb5f2baeea7be409bd307d385f3817f7ba13bcd6778281dc83e4eddd1651b1",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/det-workbook-08-audio.mp3",
+      "size": 192305,
+      "sha256": "697af55de2a4dc806aa94e6c81ea254fcc5df8adb29b01ba8616d4b8f5beafa8",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/det-workbook-09-audio.mp3",
+      "size": 186558,
+      "sha256": "9d0eeb685234f9d07fcaef441eb3f6b692c2ef47e939517c52deddc42fdc661c",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/det-workbook-10-audio.mp3",
+      "size": 186558,
+      "sha256": "e97999d5b76a71500a7b12c680e39efe40136a3b46a82341445b492ed1a0f83a",
+      "source": "core"
     },
     {
       "path": "exam-audio/det1-conversation-full.mp3",
@@ -2302,6 +2368,30 @@
       "source": "public"
     },
     {
+      "path": "exam-audio/ielts10-listen1.mp3",
+      "size": 347081,
+      "sha256": "b3a3dcc2f7473028c0e85ee21c2d2ebe380dd026ba544991cb213d88c95221b1",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/ielts10-listen2.mp3",
+      "size": 283734,
+      "sha256": "52eefc8d346788ee9874a9cfbf07e41594d4e3a4d80edc88d9750d84ab1931b1",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/ielts10-listen3.mp3",
+      "size": 344991,
+      "sha256": "6d2586c0af1363491f196f8a34d4e2baa405e9946d662b635b45dfd4176d1e49",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/ielts10-listen4.mp3",
+      "size": 326966,
+      "sha256": "5fd4e31c8806d270dc6c8be53fe74a47d70ff5925879ddc32bd50da5bb713fbb",
+      "source": "core"
+    },
+    {
       "path": "exam-audio/ielts2-listen1.mp3",
       "size": 866449,
       "sha256": "2f35d901c0cd52d4617bfb55fbdf0b34d040c10440d0ecb0532f88e2e956c288",
@@ -2372,6 +2462,126 @@
       "size": 785087,
       "sha256": "b8b23f1e75ed14f58ea43e78dd3f545a90d88b3ffa6356c0e8101646512aef29",
       "source": "public"
+    },
+    {
+      "path": "exam-audio/ielts5-listen1.mp3",
+      "size": 347472,
+      "sha256": "021f1a678c1f732166873b943ec6d6d4d3c59cddda4cf2674adf2cdfa0fdef46",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/ielts5-listen2.mp3",
+      "size": 285693,
+      "sha256": "dae9a6696810bd81604df3ab4a6ced18ff4e8d25a5ac59bc355705ad4815bbb9",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/ielts5-listen3.mp3",
+      "size": 344599,
+      "sha256": "49049129ff06a1dba189d9b18b38e5750277c1207b73104daedd51f6975d883f",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/ielts5-listen4.mp3",
+      "size": 329579,
+      "sha256": "4e791d5c657b479f1c756afd1b4f02039eecf5ca30a295958f1dea1b96e18c83",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/ielts6-listen1.mp3",
+      "size": 344338,
+      "sha256": "7979e532dd274823a645bbaad19ea468bc29f05b5c36932da80fda824f75aec7",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/ielts6-listen2.mp3",
+      "size": 285432,
+      "sha256": "9edfad115db783e69f28aa3e4f03e8c0821cea797373a387e352e583bc449f2b",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/ielts6-listen3.mp3",
+      "size": 342901,
+      "sha256": "4e76088275f1e98ef798013ead29c93958affe57f7215ebb7a441521a305b792",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/ielts6-listen4.mp3",
+      "size": 328011,
+      "sha256": "48062e9594a1903cd097db2a3cde6e872c383bfb5e0d77a7e9c1a920a7c67047",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/ielts7-listen1.mp3",
+      "size": 340289,
+      "sha256": "6ea334f508dde17e7e4fce2cc6534d22821dceef7d22b5b0a2901374ca182cb4",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/ielts7-listen2.mp3",
+      "size": 283864,
+      "sha256": "239cba8dd34e64ee3f1334d43a66e3873844a08d7a6a42c79c0696fe680cf288",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/ielts7-listen3.mp3",
+      "size": 345121,
+      "sha256": "3fdc1f0222c9344117d54bd23506e73ae0b2ff5c722fd12629cebd5da3c30e4b",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/ielts7-listen4.mp3",
+      "size": 329840,
+      "sha256": "63999a12bc1f126306b6ee1dc6afdb1c3a0217f05bfa995d5271c3a101d9c461",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/ielts8-listen1.mp3",
+      "size": 348648,
+      "sha256": "a3b9ed676c907f01729375028005dbee03fc680047acf879fe0ce06eed5bcabd",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/ielts8-listen2.mp3",
+      "size": 285301,
+      "sha256": "f40302cd2351eddadc1ebb81d50808f0b7c330c4bf730b13b342743c1fbf279c",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/ielts8-listen3.mp3",
+      "size": 350085,
+      "sha256": "56ca4ad553d2f1153790315ab66faa9b6e3b3e59e01922913df8713d25b29d9c",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/ielts8-listen4.mp3",
+      "size": 326966,
+      "sha256": "b10aa871bcb105d2e02d7ac0277c52782aff425105ff01d19bae31d0666bcea4",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/ielts9-listen1.mp3",
+      "size": 341726,
+      "sha256": "8154595461fa713bfcba82837f02aa3f71384a390ac2730e0d494ef4238df824",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/ielts9-listen2.mp3",
+      "size": 285432,
+      "sha256": "3a0a22f0942166d02c812698507bee0f386c787b2a30044bda00c9eabcc494b3",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/ielts9-listen3.mp3",
+      "size": 353089,
+      "sha256": "7268cb3bf91338f130b3478613fc84d2e9da7b359504977f8c8f530c84481b7e",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/ielts9-listen4.mp3",
+      "size": 333366,
+      "sha256": "f17745fe5d08aa60bf9f2946671d6c9eadc4965e2e282e80dda9fd6d9ebc14f1",
+      "source": "core"
     },
     {
       "path": "exam-audio/tf1-l-academic-01.mp3",
@@ -2588,6 +2798,228 @@
       "size": 43893,
       "sha256": "f3f5bd2352ed209c40a4e6f7beff2202538211e922b9a2d778f0e00c8fe150a3",
       "source": "public"
+    },
+    {
+      "path": "exam-audio/tf10-l-academic-01.mp3",
+      "size": 215946,
+      "sha256": "a2c76382d57bbf12bf811f67d5c891d3bdf005d754d4090309d3279d5c98f3f9",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf10-l-academic-02.mp3",
+      "size": 210460,
+      "sha256": "a5d00e6390510df5e2792e5e806cefd26858b42cbe142f0fe968f21ad77185c3",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf10-l-announcement-01.mp3",
+      "size": 136403,
+      "sha256": "9345b54835039e020dd022d32c987020eb3462182c5bbe450da34d5ca5c717d4",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf10-l-announcement-02.mp3",
+      "size": 129481,
+      "sha256": "043087bdc7da91b8f5bd965ccaf1a66d88db92812ba8d36d7b3b8172b383273e",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf10-l-conversation-01.mp3",
+      "size": 138362,
+      "sha256": "b09148d774ec2d9134b4bee9f77d4f3eef7036a6b88d597b8d0e88a9b89d7d8d",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf10-l-conversation-02.mp3",
+      "size": 134966,
+      "sha256": "bfa9c0b4e42263af70e71d144a29ccf2a2f860a3749bc718a0c0a01755c52863",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf10-l-conversation-03.mp3",
+      "size": 148681,
+      "sha256": "09c13e743889065a3da04372cd55969c6f2096e781dae801c2cac3409276c459",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf10-l-conversation-04.mp3",
+      "size": 144762,
+      "sha256": "01f026a4de954d40f5c4d64d85191063075b8f146aa585e10f774f1244be56b0",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf10-l-response-01.mp3",
+      "size": 21334,
+      "sha256": "6a4f573b557557d3c52255c3275d14161768c28f91de1b6e7cb136c0e16fb01a",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf10-l-response-02.mp3",
+      "size": 19897,
+      "sha256": "0a7708ca715c466bc4acc0b833401d2fa3fadc6fd0dbf856c770686a810c2d39",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf10-l-response-03.mp3",
+      "size": 22770,
+      "sha256": "2f7ce6b214a7baa75bac2f6796026888ace38a774a73e96892ad78087b27b3c7",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf10-l-response-04.mp3",
+      "size": 27734,
+      "sha256": "efb51cf990d04b0e1f56bb8c80f8f73cb84efff8a543fc2608232425cb1fb21e",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf10-l-response-05.mp3",
+      "size": 22770,
+      "sha256": "968df96e385d1b5583613b870ad3bf23098d2cbef2da1d54d8a1fc6b70198ad4",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf10-l-response-06.mp3",
+      "size": 27081,
+      "sha256": "4fe77c0bd9deadc3785e78e5d1240e82c3f2d7bb0c844175edbeb7dbb0bb8835",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf10-l-response-07.mp3",
+      "size": 26819,
+      "sha256": "45db81e3bce68c05ff5d71565615a756be28d08b5fbb83ba368166af3165a776",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf10-l-response-08.mp3",
+      "size": 24599,
+      "sha256": "497ac294f2ddb6611425ea5b9dda1fba4df241f9d68d424e9406de03dbc452e3",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf10-l-response-09.mp3",
+      "size": 21856,
+      "sha256": "3fdde19b361d2982e6f7ca2b7b0eed32bcd68c59d4ad3b8db5fbebe220bb7b3a",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf10-l-response-10.mp3",
+      "size": 21334,
+      "sha256": "f3e9e1276567c58a9289a051b0fb25c7d2c870f0e81c4e1ee52399614fd25306",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf10-l-response-11.mp3",
+      "size": 18852,
+      "sha256": "e47c6ab500ab1a95d45ee5a13d916a51c8fac064ae63f2149cc0d6c06f81f944",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf10-l-response-12.mp3",
+      "size": 23032,
+      "sha256": "b044faad24392eb682ad8fb612bd22c1dac8d230a2be0558afbf1d0c13571e39",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf10-l-response-13.mp3",
+      "size": 28126,
+      "sha256": "fe5d3a9a57a9fb380c6dea08c7ec3200630cbef7891037c5354936b1f286700f",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf10-l-response-14.mp3",
+      "size": 21072,
+      "sha256": "c4fbed398610c215044f11bd75dafa8b451e1c975e74d92fd59671201f91c8e3",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf10-l-response-15.mp3",
+      "size": 27342,
+      "sha256": "48ba4ec2205a7c2c2f78b7bfb8d4aa41f759511eb2fcceb36c1b4c0d4003f049",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf10-l-response-16.mp3",
+      "size": 28256,
+      "sha256": "2dae3a620260f91759cb2717ff306b11b97241d25ecd4fb2048513a08512f96a",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf10-l-response-17.mp3",
+      "size": 23554,
+      "sha256": "f07458fa54a302857de7550c7930692878ad878dd8960e2c86b7c23c1a07e2b6",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf10-l-response-18.mp3",
+      "size": 19505,
+      "sha256": "e3c545e497eac24e04da5f9ff1bd15e326df9fc9f4585ad0222de9fb77df382f",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf10-s-interview-01.mp3",
+      "size": 27081,
+      "sha256": "e57f646e27f0db831d80f67e2c83c51491aa123289c882d5d4801eb7acbefbbb",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf10-s-interview-02.mp3",
+      "size": 38705,
+      "sha256": "5aeb2468d637637fcad87fd452b0bd9b39579ae90bf8818b9bb216132b1487c4",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf10-s-interview-03.mp3",
+      "size": 37007,
+      "sha256": "e8512724c743cb23a2864e44cf710438a2eb4964042ac8726cc864771042a520",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf10-s-interview-04.mp3",
+      "size": 39358,
+      "sha256": "87f3fee2ed9dddd3f1c5701cd52a80b2d4ce1262919bd136ff678430cf1c19f4",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf10-s-repeat-01.mp3",
+      "size": 9970,
+      "sha256": "d98dd2bce7bdd503ea87a844b4d41ad4bb04c23dfa687dc9b2bda12eb7e4337d",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf10-s-repeat-02.mp3",
+      "size": 15064,
+      "sha256": "8b24ccb78dd1f1646dcd346d43cb6d61399b665b78c2482a0f91336476574937",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf10-s-repeat-03.mp3",
+      "size": 18983,
+      "sha256": "ff794792ffaff2411cac99fa29c427b6b87fcc5e6d7cfe33769fbb4039573d08",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf10-s-repeat-04.mp3",
+      "size": 18983,
+      "sha256": "daf12e495b38613430cdfea61ba928abcec12fc39adc804c8dcdbe8033df52b5",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf10-s-repeat-05.mp3",
+      "size": 20811,
+      "sha256": "8bd6e6c97b0c98c18b121eac72d9b39afe822ab6c24a51d7afd4ed16ef51240d",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf10-s-repeat-06.mp3",
+      "size": 31260,
+      "sha256": "b69d3c1c75fe9bd6365efe5986a514666f64c68660046f21631b575bba65bdcc",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf10-s-repeat-07.mp3",
+      "size": 42101,
+      "sha256": "8cd234ea9da1d59fc4c3f3066bb6c833c2f33f2eab8bf7f3550ddd2e06be5eaa",
+      "source": "core"
     },
     {
       "path": "exam-audio/tf2-l-academic-01.mp3",
@@ -3238,15 +3670,1125 @@
       "source": "public"
     },
     {
-      "path": "exam-audio-manifest.json",
-      "size": 500713,
-      "sha256": "f0ac87c28bf292320de358a85271ab548dede6b9eb424f6b72cfa5a9d5bda501",
+      "path": "exam-audio/tf5-l-academic-01.mp3",
+      "size": 200142,
+      "sha256": "1b4670805c6bbcb4d95e2596de470d90215b4adbbba6ab8e5dd7847e596974fe",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf5-l-academic-02.mp3",
+      "size": 203146,
+      "sha256": "c82273f8484c8ef9c1213561d59c0302e97f24e6c55110a9eed242a33526adce",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf5-l-announcement-01.mp3",
+      "size": 134313,
+      "sha256": "fb7ffabd86f2bdf7b5f757682f4168375b98db68387b8c772c5e29a03351419b",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf5-l-announcement-02.mp3",
+      "size": 133791,
+      "sha256": "32b27af12d63dfd8eca3b67ba45a0932af0d1541afdea17a608b4e50884f89d0",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf5-l-conversation-01.mp3",
+      "size": 136142,
+      "sha256": "cfde650409f4d3442510d8818c272c963aef975578f8cc5602eb0b2c8fc7e7ea",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf5-l-conversation-02.mp3",
+      "size": 135228,
+      "sha256": "ad62fa13ed81aed41e65c3ecdff4515ee80778227d404016cf219e1cc6f4474d",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf5-l-conversation-03.mp3",
+      "size": 143587,
+      "sha256": "dc94453e73a6b62a5eed1de3e1be814367db692eb5c26138c313bd9912899aca",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf5-l-conversation-04.mp3",
+      "size": 141758,
+      "sha256": "12349ce594722b8d4097891d7f3ef2b07f53c223f51215fb337cca9c98433bce",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf5-l-response-01.mp3",
+      "size": 20942,
+      "sha256": "1fe9ec5a47eeae8c1c7cb0a86a6ad40f060440ca855ca01b6c67c46756e8f865",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf5-l-response-02.mp3",
+      "size": 20158,
+      "sha256": "06cfe516080d84afedef081ceb9676a4de5f0402dd425d4960236d2042178f7b",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf5-l-response-03.mp3",
+      "size": 24599,
+      "sha256": "7a4efe19b059649735edc0524800b5c51a97557f9a7555d564136dfac9c2e097",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf5-l-response-04.mp3",
+      "size": 29301,
+      "sha256": "0fd12ce05d06c1463e38349a9ea3a2d361079e7b159373a3587c88b295b66804",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf5-l-response-05.mp3",
+      "size": 20028,
+      "sha256": "a7202f363d5d02394b655c73b239f78aeda1565ba7fcfbac3f3dccf5f6683cf7",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf5-l-response-06.mp3",
+      "size": 26819,
+      "sha256": "8074978d9e770628b08a7ca1f5cf186213f27d69c7a11c1b7e05e28ebf922a50",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf5-l-response-07.mp3",
+      "size": 28909,
+      "sha256": "6a3456952cb8b7b8f7d180681461f708dedf24a26a7d5aa3e0f623893a46f82e",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf5-l-response-08.mp3",
+      "size": 22248,
+      "sha256": "fc0bc1f7e971b544ac2b6ff4c414d3e9bb1aaa6f2af9af22d47576f7c3502297",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf5-l-response-09.mp3",
+      "size": 20681,
+      "sha256": "0dd3297f1093b47a562a0b097d42bb038bc9a499dadde82b6a8c2f424a6b6c3f",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf5-l-response-10.mp3",
+      "size": 20289,
+      "sha256": "c8106d6beb2e02ea971493131d75d7ed153cde7930964338b2c3dddbc554f014",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf5-l-response-11.mp3",
+      "size": 20942,
+      "sha256": "e8d806aa71097a0e357ed58f20b36f664153d4063602e111912f4d46c8788135",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf5-l-response-12.mp3",
+      "size": 23554,
+      "sha256": "be58de76c089a0f5c1d3048513f1870f944f7a0f6342161ca6bae44d9191b670",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf5-l-response-13.mp3",
+      "size": 28517,
+      "sha256": "e2406bbf81336af7131a29cbbc89ca180a17e5a0b744ace030c46f383874c6b1",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf5-l-response-14.mp3",
+      "size": 20942,
+      "sha256": "e2198b1c3964c7a07acb3903883c3c8b6c967752e00f87acc44e29b5d8e04629",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf5-l-response-15.mp3",
+      "size": 27472,
+      "sha256": "d779f972825da8f6182ad543b073cc69d3f0a0b571614da25c126615016f1915",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf5-l-response-16.mp3",
+      "size": 27864,
+      "sha256": "91060db7897e38148dc8343ad5a081f0aeb214aa5d325e6ae3bdc2674f92171e",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf5-l-response-17.mp3",
+      "size": 23946,
+      "sha256": "fb0921e3a014ec214294f8d174e32772d074053379609c966b7be898f6aed90a",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf5-l-response-18.mp3",
+      "size": 19374,
+      "sha256": "070ae754dbd5f32e835f95a9fcc06fa370da72b9de42973d8edc7d21ae7fd75b",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf5-s-interview-01.mp3",
+      "size": 26428,
+      "sha256": "f108c1cdb6590d342f2fa87d59d71f26a5592b08b61db4c8a69cbcb843923ba3",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf5-s-interview-02.mp3",
+      "size": 39619,
+      "sha256": "4bf705bccea2559074179943d376d2d03cce0939bcfc2ab595cd95de580994c1",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf5-s-interview-03.mp3",
+      "size": 38052,
+      "sha256": "8bd2231dab84410288d02c6c41ccb85acdbf97d9580ec4bff4f4e8ed77f07bd2",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf5-s-interview-04.mp3",
+      "size": 39358,
+      "sha256": "5377d62823b779f53f4767f94e024503d9611797d0508717f7dba01e44697621",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf5-s-repeat-01.mp3",
+      "size": 11799,
+      "sha256": "20b352a987adef77c090a02beb6582dd279c015204b20f4fff824c6975181397",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf5-s-repeat-02.mp3",
+      "size": 14150,
+      "sha256": "cf8e4c2dbb8000bf3a38b88db890b863ac36410c06e778095eae0f49e2d7bb1a",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf5-s-repeat-03.mp3",
+      "size": 16240,
+      "sha256": "d51955d28d6eb5a974c2e1df08f011fb83a0230befea1b7e36d435308955d503",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf5-s-repeat-04.mp3",
+      "size": 18068,
+      "sha256": "d71c940303cfbcc5b48f1ac769a46b45bbb12a7d4b81fa7131c9cd9d63e55608",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf5-s-repeat-05.mp3",
+      "size": 22379,
+      "sha256": "f29bdbd0951d77b960edef1538b3b14535964e4dabaf80b9ea4a05275b4f0b0e",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf5-s-repeat-06.mp3",
+      "size": 30215,
+      "sha256": "2c266b0f59cf41348f84801e7c7b06a2eec9cc381902fbc3e7aca9b1892a1805",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf5-s-repeat-07.mp3",
+      "size": 40142,
+      "sha256": "c2b3c237c31b6a0bd07ac975b5b25e5c2ab3aa819797b269001b5ecd1ef49427",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf6-l-academic-01.mp3",
+      "size": 198052,
+      "sha256": "da01caccf2f3236e5da8499da64de13460d9ab71bc8feaa5d64137b862c8cfaf",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf6-l-academic-02.mp3",
+      "size": 194917,
+      "sha256": "e5b9f35c0450e053f7173463b1eb85667e0f583e5cb4464b5d9f1edff880beb6",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf6-l-announcement-01.mp3",
+      "size": 134705,
+      "sha256": "09b00cdb5c3674d98ab4b043679aa5e72e01978f108dc160c628c616f73b55aa",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf6-l-announcement-02.mp3",
+      "size": 138101,
+      "sha256": "b71c200b3c9414199dc775d5c9e75d0968e2c3c8148f1dfc91600530f2efd3b3",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf6-l-conversation-01.mp3",
+      "size": 135358,
+      "sha256": "c5c358cedc8ae426589441852686518f74b8a06c7e2bc0b6eaee4e840c0383bd",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf6-l-conversation-02.mp3",
+      "size": 138885,
+      "sha256": "f14240b5c73e4ecf3d959e8230a11f98e4f1a21481b26095639a76ac770c1b86",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf6-l-conversation-03.mp3",
+      "size": 143195,
+      "sha256": "98718c51741fc5b26f42fbda9aeb83b4717c10380a310c8209b1f283ce07935a",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf6-l-conversation-04.mp3",
+      "size": 148028,
+      "sha256": "09e3c571871bd2f130175023d4a2a337323d1e872acaff94ed05305a517416ee",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf6-l-response-01.mp3",
+      "size": 20028,
+      "sha256": "8ee99645bb32f43ba8092ed01b27116c125305bc660f6c35f3d58b78acfebebc",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf6-l-response-02.mp3",
+      "size": 18852,
+      "sha256": "bdde48ad312481159b23642748566c0e224a5532ebb99c75645846021c01b6a5",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf6-l-response-03.mp3",
+      "size": 22640,
+      "sha256": "9c9474de29cfd51df38d8bedfbdc47f4c67c3b2a900346b630539d2fee51efd5",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf6-l-response-04.mp3",
+      "size": 27995,
+      "sha256": "2ed448d2d69810fd48a695b57ef883fcfb02e67896a3f6b28896e04b9cb2e752",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf6-l-response-05.mp3",
+      "size": 23554,
+      "sha256": "96bf5c641f7fe2d160accc559759f5b605315ec0835995e0dfdc94634ed1b6d3",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf6-l-response-06.mp3",
+      "size": 26689,
+      "sha256": "dede49a308133941a4c18d2e996db41426d2d59c781079aa6ce3da6deca41173",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf6-l-response-07.mp3",
+      "size": 27342,
+      "sha256": "cd63ee8a1ddea9880b44f909ad95ccfabef8cb1dd154ba930e34064c4358a7b7",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf6-l-response-08.mp3",
+      "size": 27864,
+      "sha256": "ce82afe3eba139d2ffa5268f242d3a47c6c2e10693992ead460a98db4856bc62",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf6-l-response-09.mp3",
+      "size": 21072,
+      "sha256": "142c03b8508eb1bff2fc322a784228c59c63076026f3de7ee1428ecb99bc4fca",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf6-l-response-10.mp3",
+      "size": 22901,
+      "sha256": "0da6d3e07ce2bde7f651a152dfdc1c9c14b0eafce07388320311b6d18fae9dcd",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf6-l-response-11.mp3",
+      "size": 19505,
+      "sha256": "c32a93bdfc54c48a6bfcf136057204eab5593f25d193085f3912252170ff21e7",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf6-l-response-12.mp3",
+      "size": 25905,
+      "sha256": "de5707dfc4c6facd32db8be3f7065c9ee023c34608d5483c2130e44455829f05",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf6-l-response-13.mp3",
+      "size": 30477,
+      "sha256": "866a8c7b194729b9e86a53ad8e9c92a5fc65d35bf4e27c4ae62e2f8c6e2ffb0e",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf6-l-response-14.mp3",
+      "size": 19636,
+      "sha256": "fa65e3df760a42589f12c022597e606c4754eab5f40bafa71e19065dbc1effc3",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf6-l-response-15.mp3",
+      "size": 28387,
+      "sha256": "d5926f6cb6fe5f52a843351acfb06397c2dc15261858a599ac4d9b9ea521c18a",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf6-l-response-16.mp3",
+      "size": 29693,
+      "sha256": "cf9445225bc28a84b07892ce45d17682dddf83ecd649d8c7b7fa9575d3c1efc5",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf6-l-response-17.mp3",
+      "size": 22640,
+      "sha256": "dbca10ec752b1310186f2c660f068ede15a0affcd964a909b1346572036388b2",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf6-l-response-18.mp3",
+      "size": 23946,
+      "sha256": "9e79616bb5ac21a465f53fa818b5d67e6538aab9378494f5172ea8f505c60b0b",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf6-s-interview-01.mp3",
+      "size": 23554,
+      "sha256": "948cd8d86266cd240073cb89df11a21a465722294140df05d8915436cf31816c",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf6-s-interview-02.mp3",
+      "size": 35832,
+      "sha256": "42368a86db18ae52b7417cf37e536361d677c5f4c780509467791503d3a3fbed",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf6-s-interview-03.mp3",
+      "size": 34264,
+      "sha256": "a17fe7c131c3dcd5df75f83668cc426a3369201de26813f02646a1910d911a7e",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf6-s-interview-04.mp3",
+      "size": 35701,
+      "sha256": "bb78c6b840222ebaf41a599a13f78ad373b3bce3a77a91137f6fc160e1cd5b2d",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf6-s-repeat-01.mp3",
+      "size": 17546,
+      "sha256": "a5cc4709514fcdd837a2bc3ac2a2e14aa3c31f7c62e407915c4e7ee3876b66b1",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf6-s-repeat-02.mp3",
+      "size": 13628,
+      "sha256": "311880c1646eec5585342c60d1c854760bb4540f6e1f34f527f6a27b64688de3",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf6-s-repeat-03.mp3",
+      "size": 20419,
+      "sha256": "b9786c6dda072361eb31d24d13792aebe1182600f27686a3516c26431921c036",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf6-s-repeat-04.mp3",
+      "size": 17677,
+      "sha256": "0dcc0ec5c8c7f3076e0c3e76f7453b25ebfa23436d0f9209253a1b2084d53fc9",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf6-s-repeat-05.mp3",
+      "size": 20811,
+      "sha256": "255fe3de092c0505b72a2c1e00459a153c720494668152fbf420b2702201f0ab",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf6-s-repeat-06.mp3",
+      "size": 28256,
+      "sha256": "d0883861ac0617d2f665fba18c3845cd43883f02859320d4de80cb67ae09c85e",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf6-s-repeat-07.mp3",
+      "size": 42232,
+      "sha256": "f0034c6c0c5b95329f9d1a80e211c3b759e9c711bd03089dccbe810a562685cb",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf7-l-academic-01.mp3",
+      "size": 206542,
+      "sha256": "b3cf8a3eeaf8c4c1c8aadf89aeea2411a8f597c5aca67234ade93eccd15977b6",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf7-l-academic-02.mp3",
+      "size": 206019,
+      "sha256": "d79ae4c0643534364bf572b03685fb375243b5d6daa4a667ebbee5020581f37a",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf7-l-announcement-01.mp3",
+      "size": 135228,
+      "sha256": "160f4ac57cc735c090b1257180b8a933a920eccede899ed7c272b38a4c304f7a",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf7-l-announcement-02.mp3",
+      "size": 144109,
+      "sha256": "32f60beb5550d093e845286e50a2106dc49f3643cc064b18b93910ba3ca2d393",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf7-l-conversation-01.mp3",
+      "size": 134183,
+      "sha256": "fad6e3ffc8e05a9eddf2b83ee8cae509c2cd31899896a927150980e999831a85",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf7-l-conversation-02.mp3",
+      "size": 142672,
+      "sha256": "d35d07bff1d6f2787b9d034cb668ae88005681589cffe192ba430fbea850e25f",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf7-l-conversation-03.mp3",
+      "size": 147244,
+      "sha256": "a8ef339ec337eae8897d71d825efd97c4d68b17ed18ae46797d2c4a0d560a863",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf7-l-conversation-04.mp3",
+      "size": 152468,
+      "sha256": "d220faf03e2dfa37a6a129fda9c2acc813a6a31bdf5e7e13b2b0f008b9ccd252",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf7-l-response-01.mp3",
+      "size": 20158,
+      "sha256": "b147587e5cf33472c12cd0aab4593383bf3e348cdb8de92948c1900ad39c7dbc",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf7-l-response-02.mp3",
+      "size": 19636,
+      "sha256": "ab3254afa949a62c339acfedce1a74946ab9d326fe80aacf8fabb39d440cfce7",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf7-l-response-03.mp3",
+      "size": 22770,
+      "sha256": "fd808e329c7d95eb8a56d05100e602c090e11275067e5cf8babd898c25b581d6",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf7-l-response-04.mp3",
+      "size": 28517,
+      "sha256": "761400fa123b32cf587bbae5721ed006c56b2afa4da03f1174a76fdd66e7daa6",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf7-l-response-05.mp3",
+      "size": 20158,
+      "sha256": "660bcd1392f8a9e2c1d0444adcd321f82655f7d2df9a481fd928a7ddb5541942",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf7-l-response-06.mp3",
+      "size": 26950,
+      "sha256": "1d36c6a112338d00cb65031a90d7b886c724c64caab168db83a893f21cf334f4",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf7-l-response-07.mp3",
+      "size": 27734,
+      "sha256": "8ab0f37db5d160ac896b2ac63b2f7b8c06bc214ed1c645f03a6f137986449929",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf7-l-response-08.mp3",
+      "size": 22770,
+      "sha256": "ef2162c59b7933fd790943b8f1a19386a70b36ef495edcda71c2e4039c821c65",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf7-l-response-09.mp3",
+      "size": 22248,
+      "sha256": "72d18715c92bbd54a92602ad325d55916fe49a0bfe18fe57baa1535ec79c734a",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf7-l-response-10.mp3",
+      "size": 26819,
+      "sha256": "ad9ea80fb6287d4802ba6a7de5c39e6a8d1a4888ee03dfeaddf94ab5a5565f9d",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf7-l-response-11.mp3",
+      "size": 19766,
+      "sha256": "15f04c9ee0fe4f77787416871e7f26c09f9d3a3e36f5a8095aea4b5c1691efbc",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf7-l-response-12.mp3",
+      "size": 28126,
+      "sha256": "d4327b960fa13980c27e7238416dda4f09fdb63b718ce67fae7080630a90ab15",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf7-l-response-13.mp3",
+      "size": 33089,
+      "sha256": "790434835b4dbc606503d345ffee68bf096fb8cd0f6e70f56c35fd1365c3cedf",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf7-l-response-14.mp3",
+      "size": 23685,
+      "sha256": "3704b8ce41e8c1caf8b66e3e636f5a2567f22ac7e0e3cbc9d8d0955f236a8304",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf7-l-response-15.mp3",
+      "size": 31783,
+      "sha256": "61665ca38d780faae37c0488bc670860749f4c5fdf834af25b3663cd55db3d62",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf7-l-response-16.mp3",
+      "size": 33481,
+      "sha256": "784fee8a62a1759f531ac6001550abc5ca80d8c2ac42ade4320d70a26ab155d4",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf7-l-response-17.mp3",
+      "size": 25121,
+      "sha256": "d4a3445accf3ad7b933a4719b38086337bb03dc2b284e0fbad9aaa09e072b9d7",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf7-l-response-18.mp3",
+      "size": 22770,
+      "sha256": "4037e473321b92a58dd37a87cce313e5b5d62bd9b47df3aee46e121356ab8996",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf7-s-interview-01.mp3",
+      "size": 27603,
+      "sha256": "86cc8b9cd6a86fec9b24f12aa7aaad15be02dc341d1b0bfac6d24d87959eb0ab",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf7-s-interview-02.mp3",
+      "size": 37138,
+      "sha256": "5058ca30747ed866c93ef3401744c791b556923452b0170e71be4d7448c271cf",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf7-s-interview-03.mp3",
+      "size": 35179,
+      "sha256": "9c6d40f7e2e9f1d513bbb6d919c1713869abac0e74b4fd5dc90914d5468dd9b9",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf7-s-interview-04.mp3",
+      "size": 37138,
+      "sha256": "aa049184edeaddd7492eb2ad1cae912c27d6ba32063f1a4744ceec5fa7d1f757",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf7-s-repeat-01.mp3",
+      "size": 13105,
+      "sha256": "6a7e7dcc01457771d25f4ad27c9f804a27b6a54ef1a8cf6afc6da7f2a61dbdf9",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf7-s-repeat-02.mp3",
+      "size": 14411,
+      "sha256": "d574d11bf3838edc77d567ba6e48d233695dba0a021c4c1f7b0b0384acff2f39",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf7-s-repeat-03.mp3",
+      "size": 16632,
+      "sha256": "597c5c1fb485cbd21406ca7e77fadc1da55453c083ee0cbf5e7ad5efd6b674bd",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf7-s-repeat-04.mp3",
+      "size": 18983,
+      "sha256": "301c1fa04a44b8c6c0e424625a2540334bd7c3262cb80230c04fcc71d1fa859b",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf7-s-repeat-05.mp3",
+      "size": 20811,
+      "sha256": "41cea46b4ff49bd0007256f06e3213f7918d07706819febd3cef2a5c09c2d057",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf7-s-repeat-06.mp3",
+      "size": 32436,
+      "sha256": "17c1fc399df481a5c5f0534fbdcbaff9e7d2cf9cb0f088ecc8ab3e743f50ee88",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf7-s-repeat-07.mp3",
+      "size": 39228,
+      "sha256": "3be2d6479fe8db9f00373fb48cf9d2164e72cdc9b1b5626361a9ddf5761777e3",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf8-l-academic-01.mp3",
+      "size": 209938,
+      "sha256": "62d0c3bb25366219c4867b1099d309100cb843dc31a6bf25aa405ca4eb804fc2",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf8-l-academic-02.mp3",
+      "size": 211897,
+      "sha256": "df2db3b819d91d8f069471a3c4b8c4297cdea2b1235b94e6cf589338292d7646",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf8-l-announcement-01.mp3",
+      "size": 136403,
+      "sha256": "766b5cddf29b0eddf5177e7c17dca90bd07b82553f20d5ba21f7469b77a20e50",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf8-l-announcement-02.mp3",
+      "size": 138101,
+      "sha256": "d72d53af1b1f974d5f30b8e6c8af1bfe2991c27cf0b47050bdb56f53393204ef",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf8-l-conversation-01.mp3",
+      "size": 134574,
+      "sha256": "2123639cfbdeedac3c61f647e61dbfaae64ab75f0b4b732217011d035cb403c5",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf8-l-conversation-02.mp3",
+      "size": 136795,
+      "sha256": "9246429992f14bedceda1f18b164d42528254e4d8c173ea438dce09c05d5df86",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf8-l-conversation-03.mp3",
+      "size": 146460,
+      "sha256": "8a6b07abafd6ad8ec8e55d7fcd4848718e330df9676ac1b6b424a8d928eaa9a4",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf8-l-conversation-04.mp3",
+      "size": 148811,
+      "sha256": "b2f6e86a9adfc92821b04c8f921c3a7a8288f176b732df85e5d509dbffd62ec4",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf8-l-response-01.mp3",
+      "size": 19505,
+      "sha256": "cb5602494cfba1889f777d9c1be28c35102b78033344d12b1062d8e291726041",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf8-l-response-02.mp3",
+      "size": 19505,
+      "sha256": "d312df7145f08d232bb2ee1dec5d4159a8b7aa525582eea6a1daa3ea6cfa5a15",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf8-l-response-03.mp3",
+      "size": 22640,
+      "sha256": "59240dd70cd73011f5ddc9c8903f4787fb148aa8f5f713b0aea03c98441b6726",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf8-l-response-04.mp3",
+      "size": 28256,
+      "sha256": "cd372adc110d4207e118f579443c9296d7fdf755b325fca8188433f57a76d013",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf8-l-response-05.mp3",
+      "size": 22509,
+      "sha256": "913089fc83452c6fcf19aeb1967bd63c6f82aeb8227e0a9d1411320d1cbcee6f",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf8-l-response-06.mp3",
+      "size": 26166,
+      "sha256": "f67b4ca22d21eb38b4f7c10703df0303ac8cd24a2ddd960bfc655a7a0c3b6623",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf8-l-response-07.mp3",
+      "size": 26950,
+      "sha256": "0227ad4d0fa68de46994eb6bf46ad3a1e39352a1d16ad2a741e5ed16e50ce32a",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf8-l-response-08.mp3",
+      "size": 23815,
+      "sha256": "921567c41b7c93c2198904b035de21f1ad7a693f8c64e1384f4dc7d160b90a13",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf8-l-response-09.mp3",
+      "size": 20550,
+      "sha256": "36cfd6ebc01889eb7dd522eaebe666300cade2eb5ca123b0bcba37df6b283d62",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf8-l-response-10.mp3",
+      "size": 19897,
+      "sha256": "1e272b4e7743c2348aabaac45ec48a6baa15b403efe37b4e6559bec5933b5f5d",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf8-l-response-11.mp3",
+      "size": 19113,
+      "sha256": "0f4c69174f7e26be3e8c06f590c49883045fa396df2ffe22eed1a9e707687b00",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf8-l-response-12.mp3",
+      "size": 22509,
+      "sha256": "70f68f86b81604600dd5f3116c0c6dc63e76f4b97cb771633db6854626fbd80b",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf8-l-response-13.mp3",
+      "size": 27342,
+      "sha256": "a7cace572fb99171b2a92386f3ad2d3fa49558ea6aafebbb6e96d61a644ace8a",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf8-l-response-14.mp3",
+      "size": 20811,
+      "sha256": "71b6939265c17e3bb319e34506937a2fd89f9ecac1de5877ab1c607bcc0285a1",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf8-l-response-15.mp3",
+      "size": 27081,
+      "sha256": "3f4cc802c6f60483357491afc7d1c2cb385156729b2eca12adbbb9dcdf95e5e3",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf8-l-response-16.mp3",
+      "size": 26689,
+      "sha256": "781a3585137acae3d3a2f79ebd1b78de02a6ede16088b2f087d81ecfac14cf0a",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf8-l-response-17.mp3",
+      "size": 23685,
+      "sha256": "a4f03f9cdfd5833a7f4f32d5c6d1888ff6ff7ff09b0aba0c1d17c212264ac9e8",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf8-l-response-18.mp3",
+      "size": 25121,
+      "sha256": "57dc07458098b6483a6a6634ae20560fd4fea53694d7944a598a2509a288bb5a",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf8-s-interview-01.mp3",
+      "size": 27864,
+      "sha256": "53e0692109ea4a25b5543b292d508627f27fabd4840ba749f1a212e2379e4ceb",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf8-s-interview-02.mp3",
+      "size": 36615,
+      "sha256": "8e95e327d8ab9e37e7f7a5a43b1746d6793ea44d5c45e084854a245708c0eb5f",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf8-s-interview-03.mp3",
+      "size": 35179,
+      "sha256": "0accf265ef05840fbbb8ad886261e96c169adb13e5591851b5d20ab967c52312",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf8-s-interview-04.mp3",
+      "size": 36877,
+      "sha256": "59fe987a73a5ec56e19a3bc95a9d2ab686bf3b6ea5a9dd4cc9b202e1ce852002",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf8-s-repeat-01.mp3",
+      "size": 12321,
+      "sha256": "d4147ca9d2247086d52dd721c8901fd962099a142683a9714ef55dadfffb8513",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf8-s-repeat-02.mp3",
+      "size": 13758,
+      "sha256": "bfdae2fa39630cf2c9a3f060aecf4bb4772b5b1f13475022e938e6b5531cc117",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf8-s-repeat-03.mp3",
+      "size": 17546,
+      "sha256": "549f73737f9db4379df40c7d894b9cfb61fc0cdacbd567f2285922283c37d785",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf8-s-repeat-04.mp3",
+      "size": 18199,
+      "sha256": "9393a9a44853e3955f0c72ef921cd184bd3f214d936c3697495d4927ddaca086",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf8-s-repeat-05.mp3",
+      "size": 20681,
+      "sha256": "06143d5ca9ef6915ba6325bbb1581b86a4a591da25f0adb45c944dfc5dd5e4a2",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf8-s-repeat-06.mp3",
+      "size": 32958,
+      "sha256": "0c3d7f1589dc287805216979eecb471b64ad0c88ecc3633380a0aa1a7f03e3a7",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf8-s-repeat-07.mp3",
+      "size": 40011,
+      "sha256": "f986bc9d2bf654a795b3def297fd400af8ae1ded75a854273b19e6c1278a05ca",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf9-l-academic-01.mp3",
+      "size": 225219,
+      "sha256": "26011937be7e2dfd364c73cf5681351d7a5dfc268160af5fac9616b12d16d61a",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf9-l-academic-02.mp3",
+      "size": 200142,
+      "sha256": "ef09857fe4434d83c4755c41e67b382f3fb2e16834bc96a510181d03ed7be236",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf9-l-announcement-01.mp3",
+      "size": 133138,
+      "sha256": "1d0c6d8577eb5532fa1579adbe436fcb7c68375596e43d606222bb0a65e0e7b0",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf9-l-announcement-02.mp3",
+      "size": 133660,
+      "sha256": "8785dcf7c4c6b59da4a9534bbdb4b0518a82cde556c9c7f691c30dc39167d1cf",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf9-l-conversation-01.mp3",
+      "size": 139407,
+      "sha256": "9c6294a73a858909016db56e32715d074a49f4beb51be45f5879813d35f8f4a3",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf9-l-conversation-02.mp3",
+      "size": 138885,
+      "sha256": "dea3c732ce3815bb57a38b3e1716f34bf5081005d262fbdce50a115c5836b35e",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf9-l-conversation-03.mp3",
+      "size": 143979,
+      "sha256": "9d99db0afbf055fd1c11611b7233b762f0687d3c70a053f73c8ad409551a3b2b",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf9-l-conversation-04.mp3",
+      "size": 143587,
+      "sha256": "c432af42348861f273013aeef1b3dbb60a5a5492f42dd32425af096ef814b150",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf9-l-response-01.mp3",
+      "size": 22248,
+      "sha256": "7c79ceac5f659a46bea6efa8ed27ad8396d9dbb0f1ab1cea57478e94a7cd0348",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf9-l-response-02.mp3",
+      "size": 18983,
+      "sha256": "8893e52c7d0da88162bf5b45f460f9121661a554c6f7ff6ece221010036ac315",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf9-l-response-03.mp3",
+      "size": 24991,
+      "sha256": "4492178d7cf2461ca0a28167c6d7a34df91368af0072e4d3f0dbac2e07c9c68a",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf9-l-response-04.mp3",
+      "size": 29301,
+      "sha256": "270615bcb7cf550caf6f60c58c42faddcd57efeafcf9a4f2ce4f1b0735f36f71",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf9-l-response-05.mp3",
+      "size": 20681,
+      "sha256": "bb32b4c8d07dd72e575ea7d93b0ee251f4045e7acd5319b7e7243b1b0e5adf3a",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf9-l-response-06.mp3",
+      "size": 28909,
+      "sha256": "b8519d38cfd8576611af51762ccde3aece68c5f7662683d1453d812364710651",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf9-l-response-07.mp3",
+      "size": 29562,
+      "sha256": "466815a8baa27d5cbc971cf36675e31afd672531fbac3ece5ac433a9bc24e454",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf9-l-response-08.mp3",
+      "size": 23162,
+      "sha256": "cbe49128fecac8df82b1690396d3d4321b9f9adb1b31a065c86152a24af46b16",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf9-l-response-09.mp3",
+      "size": 23423,
+      "sha256": "1d43ec660ccef639914dbdcae8736c7b02347eabf21ac1ce12f17fedf221ca7f",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf9-l-response-10.mp3",
+      "size": 21856,
+      "sha256": "90a7f822f703eca5d2a9025f4d7b304332079871f0a558cbf52d639d08bb7801",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf9-l-response-11.mp3",
+      "size": 19636,
+      "sha256": "11c8f622ca6c269cf46b7134603847fb92c616636dc786e12ce29b60a3c1d802",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf9-l-response-12.mp3",
+      "size": 24991,
+      "sha256": "4e8dffe0dff6ac84f51353820b8208b3f7b4ef326f69d40bc2d567798ff873b2",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf9-l-response-13.mp3",
+      "size": 30085,
+      "sha256": "6b33a808a3e780e96abe5648278ad8045a17d350c37a6247365aa95c51de42ee",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf9-l-response-14.mp3",
+      "size": 21203,
+      "sha256": "7a453deb92b990544ed5981bf7b02997b533f926c99b246e2af846faabf2bbf1",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf9-l-response-15.mp3",
+      "size": 28909,
+      "sha256": "a4122bba434c4d677b16d39804b40720196ed9cd0353f3377d37dc46d8468092",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf9-l-response-16.mp3",
+      "size": 29432,
+      "sha256": "b57fb69b869a0412e1df1424dbcabd43b3727c2ebc6be91d387531a5d106258b",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf9-l-response-17.mp3",
+      "size": 22640,
+      "sha256": "78151e05aa89b2ec2785bc3ffac86a759c78ed30e8c19932cf12ca254b4f3785",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf9-l-response-18.mp3",
+      "size": 23293,
+      "sha256": "9e8730355081e171bd370a3d989acd4d09ce7fc1c4ad42e0f56261b018a93bec",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf9-s-interview-01.mp3",
+      "size": 28909,
+      "sha256": "1768b1e320fe13cac36879c52fe34f2551cfcf204be3986d249392e145591506",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf9-s-interview-02.mp3",
+      "size": 38705,
+      "sha256": "f7a4b53a3aa910a895479243765f72a6cb33729e56f5eb588629d3f609398195",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf9-s-interview-03.mp3",
+      "size": 36877,
+      "sha256": "aecdef5d66497306a6b7051694bcc1626759921a89531e218a71bff6ea8538de",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf9-s-interview-04.mp3",
+      "size": 38966,
+      "sha256": "627d862ef0d0511503de12a4f9fc81b5b6f86a28c9d51ce64d5c9e500ad5ee3a",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf9-s-repeat-01.mp3",
+      "size": 11538,
+      "sha256": "018997f643c925e6dc14feb34710c8187fa3be680c640dedf94b2650382128c2",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf9-s-repeat-02.mp3",
+      "size": 14934,
+      "sha256": "26b5aafa25c5594007e2a6ddd45bd16fa4574844f28dc8b6ea8421ac4c275d07",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf9-s-repeat-03.mp3",
+      "size": 17415,
+      "sha256": "aaa74ea9f0e70869ebd3fd2a3a32977b03205a8c8bcbc7b2fb36885abe823ac7",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf9-s-repeat-04.mp3",
+      "size": 20419,
+      "sha256": "e5d669f59473f550927e2015f0bd9d7c4a56d439a6c15c745e43a23a90218384",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf9-s-repeat-05.mp3",
+      "size": 22901,
+      "sha256": "f9ebbc722e022ab26bfcb30f0a3b132014384035189abc66b8eb92e5d2036285",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf9-s-repeat-06.mp3",
+      "size": 27342,
+      "sha256": "f2ec0e4bf7769c7c96a5348a6f67c39b52cc4ed5e7ff85e90492d26ad7940d35",
+      "source": "core"
+    },
+    {
+      "path": "exam-audio/tf9-s-repeat-07.mp3",
+      "size": 42101,
+      "sha256": "35b56ff9c3f580f4c522bbb18799ee8d11ba2a758d302c1eb4f94f0e3f977080",
       "source": "core"
     },
     {
       "path": "exam-forms.json",
-      "size": 2196156,
-      "sha256": "001330768249a691f8694d69cad6ac680fdd56aba626d3ae989a17b1a3995c7a",
+      "size": 3561104,
+      "sha256": "6a7c6e03b933b7a4ef9c9778213c159ec04956cafa48ff4c08a58575c6fc6b8f",
+      "source": "core"
+    },
+    {
+      "path": "exam-library-release.json",
+      "size": 244,
+      "sha256": "75c0619c6039c97c258010f433ec1120b477f08bf8afeee73f503b53e6cb6ed0",
       "source": "core"
     },
     {
@@ -3257,8 +4799,8 @@
     },
     {
       "path": "index.html",
-      "size": 847,
-      "sha256": "60cdc0a16b2da604869cacf08ee3d9381ca84a0ac093edfe9b8ef14f2af1f076",
+      "size": 851,
+      "sha256": "ef08e2b83c2b97559106f1f7985e10f31d994c231d25ea8da5f4c540d9b75bcb",
       "source": "core"
     },
     {
