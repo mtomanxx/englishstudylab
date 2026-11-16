@@ -54,6 +54,12 @@ def apply_textbook_overlay(root, output):
         version = hashlib.sha256(data).hexdigest()[:12]
         artifact.write_bytes(data)
         tags.append("    " + element.format(path=f"assets/{name}?v={version}"))
+    membership = output / "membership"
+    membership.mkdir(exist_ok=False)
+    for name in ("index.html", "membership.css", "membership.js", "config.js", "enabled.js"):
+        (membership / name).write_bytes((root / "book-overlay" / "membership" / name).read_bytes())
+    flag_hash = hashlib.sha256((membership / "enabled.js").read_bytes()).hexdigest()[:12]
+    tags.insert(0, f'    <script defer src="membership/enabled.js?v={flag_hash}"></script>')
     entry.write_text(template.replace(marker, "\n".join(tags) + "\n" + marker), encoding="utf-8")
 
 

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="description" content="Free reader membership for English Study Lab.">
+<title>Free Reader Membership | English Study Lab</title>
+<link href="./membership.css" rel="stylesheet">
+<script type="module" src="./membership.js"></script>
+</head>
+<body>
+<header class="mast"><a href="../" class="brand">English Study Lab</a><a href="../" class="back">← Back to the textbook</a></header>
+<main>
+  <div class="folio">Reader edition <span>•</span> No payment required</div>
+  <article>
+    <div class="ribbon" aria-hidden="true">ESL</div>
+    <h1>Your reader account</h1>
+    <p class="intro">Register or sign in with Google. Membership is free, and the textbook and practice tests are open to everyone.</p>
+    <p id="status" class="status" role="status" aria-live="polite">Looking for the registration service…</p>
+    <div id="visitor" hidden>
+      <button id="join" type="button">Continue with Google</button>
+      <p class="small">The first successful sign-in creates your free membership. No card or new password is needed.</p>
+    </div>
+    <div id="reader" hidden>
+      <p id="identity"></p>
+      <div class="actions"><a class="primary" href="../">Open the textbook</a><button id="sign-out" class="quiet" type="button">Sign out</button></div>
+      <details id="remove-box"><summary>Delete my membership</summary>
+      <p>This removes your English Study Lab membership, not your Google account. You can still use the public textbook.</p>
+      <button id="remove" class="quiet" type="button">Confirm deletion</button></details>
+    </div>
+    <details class="privacy">
+      <summary>About your account data</summary>
+      <p>Google and Firebase Authentication process your Google account identity (name, email and account identifier) to create and manage this membership. English Study Lab does not ask for your Google password, card details or a paid subscription. Practice results are not synced to your membership.</p>
+      <p><a href="https://policies.google.com/privacy">Google Privacy Policy</a> · <a href="https://firebase.google.com/support/privacy">Firebase privacy information</a></p>
+    </details>
+  </article>
+</main>
+</body>
+</html>
