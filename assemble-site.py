@@ -67,6 +67,42 @@ def apply_textbook_overlay(root, output):
     entry.write_text(template.replace(marker, "\n".join(tags) + "\n" + marker), encoding="utf-8")
 
 
+def apply_course_overlay(root, output):
+    marker = root / "course-overlay.json"
+    if not marker.exists():
+        return
+    data = json.loads(marker.read_text(encoding="utf-8"))
+    if data.get("version") != 1 or data["archive"]["filename"] != "course-overlay.tar.gz":
+        raise ValueError("Invalid course overlay specification")
+    expected = {}
+    permitted_replacements = {"assets/index-af0557abe4eb.js", "assets/index-DGCIrGSb.css", "index.html"}
+    for spec in data["files"]:
+        path = spec["path"]
+        safe_path(path)
+        if path in expected or not (path in permitted_replacements or path == "course-library-release.json" or path.startswith("course-audio/") and path.endswith(".mp3") and len(path.split("/")) == 2):
+            raise ValueError(f"Unexpected course overlay output: {path}")
+        before = output / path
+        if path in permitted_replacements:
+            baseline = spec["previous"]
+            verified_bytes(before.read_bytes(), baseline)
+        elif before.exists():
+            raise ValueError(f"Course overlay would overwrite an existing file: {path}")
+        expected[path] = spec
+    verified_bytes((root / data["archive"]["filename"]).read_bytes(), data["archive"])
+    seen = set()
+    with tarfile.open(root / data["archive"]["filename"], mode="r:gz") as archive:
+        for member in archive:
+            safe_path(member.name)
+            spec = expected.get(member.name)
+            if spec is None or member.name in seen or not member.isfile() or member.size != spec["size"]:
+                raise ValueError(f"Unexpected course overlay archive member: {member.name}")
+            write_verified(output, archive.extractfile(member).read(spec["size"] + 1), spec)
+            seen.add(member.name)
+    if seen != set(expected):
+        raise ValueError("Course overlay archive did not contain all declared files")
+    print(f"Verified native course overlay: {len(seen)} files", flush=True)
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, default=Path("_site"))
@@ -159,6 +195,7 @@ def main():
     print(f"Complete artifact verified: {len(actual)} files, {audio_count} MP3s, {total} bytes", flush=True)
     apply_textbook_overlay(root, output)
     print("Textbook overlay added; verified content and media are unchanged", flush=True)
+    apply_course_overlay(root, output)
 
 
 if __name__ == "__main__":
