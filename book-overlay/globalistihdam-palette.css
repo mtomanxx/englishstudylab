@@ -1,0 +1,64 @@
+/* Match Globalistihdam's public brand colors without changing the workbook.
+   Source: public home.css and theme.css; semantic answer colors stay untouched. */
+:root {
+  --esl-brand-ink: #102e31;
+  --esl-brand-deep: #173e3d;
+  --esl-brand-sage: #e6eddf;
+  --esl-brand-paper: #f8f7ed;
+  --esl-brand-ivory: #fffaf0;
+  --esl-brand-gold: #ffd464;
+  --esl-brand-gold-pale: #fff3cb;
+  --esl-brand-focus: #285741;
+  --esl-brand-stroke: #66816e;
+  --esl-brand-cta-ink: #22190b;
+  --esl-brand-sage-line: #c6d4c9;
+
+  --esl-gold-page: var(--esl-brand-paper);
+  --esl-gold-white: var(--esl-brand-ivory);
+  --esl-gold-wash: var(--esl-brand-sage);
+  --esl-gold-note: var(--esl-brand-gold-pale);
+  --esl-gold-light: var(--esl-brand-gold-pale);
+  --esl-gold-key: var(--esl-brand-gold);
+  --esl-gold-line: var(--esl-brand-sage-line);
+  --esl-gold-control: var(--esl-brand-stroke);
+  --esl-gold-ink: var(--esl-brand-ink);
+  --esl-gold-soft: #375653;
+  --esl-gold-dark: #214f3a;
+  --esl-gold-deep: var(--esl-brand-ink);
+  --esl-gold-ring: var(--esl-brand-focus);
+  --esl-gold-shadow: #102e311e;
+  --esl-gold-glaze: linear-gradient(133deg,#e6eddf 0%,#fffaf0 68%,#fff3cb 100%);
+  --esl-gold-band: linear-gradient(125deg,#102e31,#173e3d);
+
+  --esl-sage-ink: #214f3a;
+  --esl-sage-deep: var(--esl-brand-ink);
+  --esl-sage-hover: var(--esl-brand-deep);
+  --esl-sage-line: var(--esl-brand-stroke);
+  --esl-sage-wash: var(--esl-brand-sage);
+  --esl-sage-mist: var(--esl-brand-paper);
+  --esl-sage-focus: var(--esl-brand-focus);
+  --esl-sage-paper: var(--esl-gold-glaze);
+  --esl-sage-band: var(--esl-gold-band);
+}
+
+/* The same matte sage section and gold primary button as the public homepage.
+   Scope to known action classes, never grading/answer state classes. */
+.ac-site .ac-hero .ac-button-dark,
+.lab-shell .lab-hero .lab-btn:not(.secondary):not(.white),
+body:has(> .masthead) .hero .btn:first-child,
+body:has(> .top + main .guide) .cover .primary {
+  background: var(--esl-brand-gold);
+  color: var(--esl-brand-cta-ink);
+  border-color: #886315;
+}
+.ac-site .ac-hero .ac-button-dark:hover,
+.lab-shell .lab-hero .lab-btn:not(.secondary):not(.white):hover,
+body:has(> .masthead) .hero .btn:first-child:hover,
+body:has(> .top + main .guide) .cover .primary:hover {
+  background: var(--esl-brand-gold-pale);
+  color: var(--esl-brand-cta-ink);
+}
+.ac-site .ac-hero,
+body:has(> .masthead) .hero {
+  box-shadow: inset 7px 0 var(--esl-brand-focus), 0 3px var(--esl-brand-sage-line);
+}

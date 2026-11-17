@@ -182,6 +182,25 @@ def apply_golden_exam_overlay(root, output):
     print(f"Verified golden exam workbook overlay: {len(seen)} files", flush=True)
 
 
+
+def apply_globalistihdam_palette(root, output):
+    """Add brand colors to public study surfaces, not member account pages."""
+    data = (root / "book-overlay" / "globalistihdam-palette.css").read_bytes()
+    asset = output / "assets" / "esl-globalistihdam-palette.css"
+    if asset.exists():
+        raise ValueError("Unexpected Globalistihdam palette output collision")
+    asset.write_bytes(data)
+    version = hashlib.sha256(data).hexdigest()[:12]
+    for path, prefix in (("index.html", ""), ("practice/index.html", "../"),
+                         ("phrasal-verbs/index.html", "../")):
+        page = output / path
+        markup = page.read_bytes()
+        if markup.count(b"</head>") != 1 or b"esl-golden-theme.css" not in markup:
+            raise ValueError(f"Unexpected palette stylesheet entry point: {path}")
+        tag = f'<link rel="stylesheet" href="{prefix}assets/esl-globalistihdam-palette.css?v={version}">'
+        page.write_bytes(markup.replace(b"</head>", tag.encode("ascii") + b"\n</head>"))
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, default=Path("_site"))
@@ -277,6 +296,7 @@ def main():
     apply_course_overlay(root, output)
     apply_phrasal_overlay(root, output)
     apply_golden_exam_overlay(root, output)
+    apply_globalistihdam_palette(root, output)
 
 
 if __name__ == "__main__":
