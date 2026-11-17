@@ -236,6 +236,102 @@ def apply_human_reading_shelf(root, output):
         page.write_bytes(markup)
 
 
+def apply_local_narration(root, base):
+    """Add optional local US AI narration without replacing existing recordings."""
+    import re
+    from hashlib import sha256
+
+    overlay=root/"book-overlay"/"narration"
+    (base/"assets"/"esl-local-voice.js").write_bytes((overlay/"esl-local-voice.js").read_bytes())
+    def patch_native():
+        bundle=(base/'assets/index-af0557abe4eb.js').read_bytes()
+        assert sha256(bundle).hexdigest()=='253ff1fc8bbe5eab5fda63943ee72c00ccbfd2a2ab4659ad9d6f562314cc7ce9'
+        text=bundle.decode()
+        def replace(old,new,expected=1):
+         nonlocal text
+         c=text.count(old)
+         assert c==expected,(old[:110],c)
+         text=text.replace(old,new)
+        def splice(start,end,code):
+         nonlocal text
+         assert text.count(start)==1 and text.count(end)==1,(start,end)
+         left,right=text.index(start),text.index(end)
+         assert left<right
+         text=text[:left]+code+text[right:]
+
+        splice('function acSpeechEngine(){','function pr({lesson:',(overlay/'native-bridge.js').read_text()+'\n')
+        splice('function _(){if(tn(),!window.speechSynthesis)','let v=e=>e.normalize(`NFKC`)','''function _(){tn();const text=t?.realisations?.[e.id]||Kt(e.term);if(!eslStartVoice(text,{rate:.87,onError:()=>m(`The on-device voice did not play. The lesson MP3 remains available.`)}))m(`No on-device US English voice. You can use the complete lesson MP3 below.`)}''')
+        replace('(0,Z.jsxs)(`button`,{className:`vl-text-button`,onClick:_,','(0,Z.jsx)(ESLVoicePicker,{}),(0,Z.jsxs)(`button`,{className:`vl-text-button`,onClick:_,')
+        replace('t&&(0,Z.jsxs)(`details`,{className:`vl-full-passage`','t?.text&&(0,Z.jsx)(AcUsSpeech,{text:t.text,element:`div`,rate:a,buttonLabel:`Read full passage with device voice`,onUnavailable:`No on-device US voice is available. Use the lesson MP3 or full passage below.`}),t&&(0,Z.jsxs)(`details`,{className:`vl-full-passage`')
+        splice('function readPassageOnDevice(text)','function pauseNarration()', 'function readPassageOnDevice(text){\n const token={mode:`device`};z.current=token;\n const clear=msg=>{if(z.current===token){finishReading();if(msg)I(msg)}};\n const started=eslStartVoice(text,{voiceURI:O||void 0,rate:x,onEnd:()=>clear(),onAbort:()=>clear(),onError:()=>clear(`The selected device voice could not play. The lesson MP3 remains available.`)});\n if(!started){finishReading();return false}\n M(!0);P(!1);return true\n}\nfunction _e(text){ge();I(``);\n if(readPassageOnDevice(text))return;\n const player=re.current;\n if(player){const token={mode:`recording`,audio:player};z.current=token;M(!0);P(!1);\n  if(`preservesPitch` in player)player.preservesPitch=!0;\n  player.playbackRate=x;try{player.currentTime=0}catch{}\n  I(`On-device US narration is unavailable. Playing the existing lesson recording.`);\n  const failure=()=>{if(z.current===token){finishReading();I(`The lesson recording could not play. You can still use the written passage.`)}};\n  try{Promise.resolve(player.play()).catch(failure)}catch{failure()}return\n }\n I(`No on-device US English voice is available. You can still read the passage.`)\n}\n')
+        replace('else if(N)window.speechSynthesis.resume();else window.speechSynthesis.pause();','else if(N)eslVoice()?.resume();else eslVoice()?.pause();')
+        replace('window.speechSynthesis?.cancel();document.querySelectorAll(`audio`).forEach(e=>e.pause());if(active?.mode','eslVoice()?.abort();document.querySelectorAll(`audio`).forEach(e=>e.pause());if(active?.mode')
+        replace('window.speechSynthesis?.cancel();if(!primary)finishReading();','eslVoice()?.abort();if(!primary)finishReading();')
+        replace('if(window.speechSynthesis){let t=()=>D(window.speechSynthesis.getVoices().filter(e=>e.lang.startsWith(`en`)));return t(),window.speechSynthesis.addEventListener(`voiceschanged`,t),()=>{e=!0,window.speechSynthesis.cancel(),window.speechSynthesis.removeEventListener(`voiceschanged`,t)}}','if(eslVoice()){const v=eslVoice();const update=()=>D(v.voices());update();const off=v.subscribe(update);return()=>{e=!0;v.abort();off?.()}}')
+        replace('value:``,children:`Clear female lesson recording (recommended)`','value:``,children:`Recommended installed US voice`')
+        replace('E.map(e=>(0,Z.jsxs)(`option`,{value:e.name,children:[e.name,` (`,e.lang,`)`]},e.name))','E.map(e=>(0,Z.jsxs)(`option`,{value:e.voiceURI,children:[e.name,` (`,e.lang,`)`]},e.voiceURI))')
+        replace('The default uses the lesson’s female British English recording at a comfortable pace. Pick a device voice for a different accent. Restart to apply a voice or speed change.','Choose an installed US English device voice. If none is available, the full passage uses the existing lesson recording where one is available. Restart to apply a voice or speed change.')
+        splice('function bn(e,t=.85)','var xn=', 'function bn(e,t=.85){return eslStartVoice(e,{rate:t})}')
+        replace('A recognised female English device voice is unavailable. Use the female-voice downloadable lesson recording.','No on-device US English voice is available. Use the downloadable lesson recording where offered.')
+        replace('className:`ac-audio-actions`,children:[','className:`ac-audio-actions`,children:[(0,Z.jsx)(AcUsSpeech,{text:e.audio.transcript,element:`div`,rate:m,showPicker:!0,buttonLabel:`Read transcript with device voice`,onUnavailable:`No on-device US voice is available. Use the existing recording or the transcript.`}),')
+        assert 'speechSynthesis.speak(' not in text
+        assert 'engine.speak(' not in text
+        (base/'assets/index-af0557abe4eb.js').write_text(text, encoding='utf-8')
+        html=(base/'index.html').read_text()
+        old='    <script type="module" crossorigin src='
+        assert html.count(old)==1
+        html=html.replace(old,'    <script src="assets/esl-local-voice.js"></script>\n'+old)
+        html=html.replace('practice=253ff1fc8bbe','practice=253ff1fc8bbe&amp;voice='+sha256(text.encode()).hexdigest()[:12])
+        (base/'index.html').write_text(html, encoding='utf-8')
+
+    patch_native()
+
+    def digest(b):return sha256(b).hexdigest()
+    def swap(t,a,b):
+     assert t.count(a)==1,(a[:90],t.count(a))
+     return t.replace(a,b,1)
+    helper=(overlay/'esl-local-voice.js').read_bytes()
+    prefix=f'<script defer src="../assets/esl-local-voice.js?v={digest(helper)[:12]}"></script>'
+    def write(path,content):
+     (base/path).write_text(content,encoding="utf-8")
+    phtml=(base/'phrasal-verbs/index.html').read_text()
+    reader=(base/'phrasal-verbs/reader.js').read_text()
+    reader=swap(reader, "  const voice = new Audio();","  const local = window.ESLLocalVoice;\n  const voice = new Audio();")
+    reader=swap(reader,"let speaker=null,token=0, speech=null;","let speaker=null,token=0, mode=null;")
+    reader=swap(reader,"    $('stop').disabled=true;","    $('stop').disabled=true;\n    $('pause-audio').disabled=true;\n    $('pause-audio').textContent='Pause audio';\n    mode=null;")
+    reader=swap(reader,"    if(speech){window.speechSynthesis?.cancel();speech=null;}","    local?.abort();")
+    start=reader.index('  function fallback(');end=reader.index("  $('stop').onclick",start)
+    reader=reader[:start]+"  function play(btn,row,kind){\n    if(btn===speaker){stop('Audio stopped.');return;}\n    stop();\n    const id=token,label=kind==='term'?row.verb:'example for '+row.verb;\n    const text=kind==='term'?'to '+row.verb:row.example;\n    mode=$('voice-mode').value==='mp3'?'mp3':'device';\n    const rate=Number($('voice-rate').value);\n    speaker=btn;btn.setAttribute('aria-pressed','true');$('stop').disabled=false;\n    $('pause-audio').disabled=false;\n    if(mode==='device'){\n      $('audio-status').textContent='Starting your device voice…';\n      const missing='No matching US English voice is installed on this device. Choose Existing AI MP3 or read the example.';\n      if(!local){finish(missing);return;}\n      local.start(text,{rate,onStart:voice=>{if(id===token)$('audio-status').textContent='Playing '+label+' · '+voice.name+' (US English).';},\n       onEnd:()=>{if(id===token)finish('Finished '+label+'.');},\n       onAbort:()=>{if(id===token)finish('Audio stopped.');},\n       onError:error=>{if(id===token)finish(error==='unavailable'?missing:'Your device voice could not play.');}});\n      return;\n    }\n    $('audio-status').textContent='Playing the existing AI recording for '+label+'.';\n    voice.src=new URL('audio/'+row.id+'-'+kind+'.mp3',document.baseURI).href;\n    voice.playbackRate=rate;\n    voice.onended=()=>{if(id===token)finish('Finished '+label+'.');};\n    const fail=()=>{if(id===token)finish('The existing recording could not load. You can still read the text.');};\n    try{Promise.resolve(voice.play()).catch(fail);}catch(e){fail();}\n  }\n  $('pause-audio').onclick=()=>{\n    if(!mode)return;\n    const b=$('pause-audio'),resume=b.textContent==='Resume audio';\n    let ok=false;\n    if(mode==='device')ok=resume?local?.resume():local?.pause();\n    else if(resume){try{Promise.resolve(voice.play()).catch(()=>finish('Playback could not resume.'));ok=true;}catch(e){}}\n    else{voice.pause();ok=true;}\n    if(ok){b.textContent=resume?'Pause audio':'Resume audio';$('audio-status').textContent=resume?'Playback resumed.':'Playback paused.';}\n  };\n  $('voice-mode').addEventListener('change',()=>{if(speaker)stop('Audio stopped. Select a term or example to play the newly chosen voice.');});\n" + reader[end:]
+    phtml=swap(phtml,'<script defer src="reader.js"></script>',prefix+f'\n<script defer src="reader.js?v={digest(reader.encode())[:12]}"></script>')
+    phtml=swap(phtml,'<p>US English audio · synthetic, no sign-in required. Verb audio starts with “to.”</p><button id="stop"','<p>AI narration · US English, on this device by default. Verb audio starts with “to.”</p><label>Voice source <select id="voice-mode"><option value="device">Best available on-device US voice</option><option value="mp3">Existing AI MP3</option></select></label><label>Speed <select id="voice-rate"><option value=".72">0.72×</option><option selected value=".87">0.87×</option><option value="1">1×</option><option value="1.15">1.15×</option></select></label><button id="pause-audio" type="button" disabled>Pause audio</button><button id="stop"')
+    phtml=swap(phtml,'US English audio is synthetic narration generated locally with the CMU Flite SLT voice. The written example remains available if audio cannot play.','On-device narration needs an installed US English voice. Existing recordings are synthetic US English made with CMU Flite SLT and play only if selected. The written example is always available.')
+    write('phrasal-verbs/reader.js',reader);write('phrasal-verbs/index.html',phtml)
+    det=(base/'practice/practice.js').read_text()
+    from_source='''    if ("speechSynthesis" in window && typeof window.SpeechSynthesisUtterance === "function") synth = window.speechSynthesis;'''
+    det=swap(det,from_source,"    synth = window.ESLLocalVoice;")
+    det=swap(det,"    if (synth) synth.cancel();","    synth?.abort();")
+    start=det.index('    const play = btn("Play audio"');end=det.index('\n  function timerPanel()',start)
+    det=det[:start]+'    const rate=node("select",{"aria-label":"AI narration speed"},\n      ...[[".72","0.72×"],[".87","0.87×"],["1","1×"],["1.15","1.15×"]].map(([value,text])=>node("option",{value,text})));\n    rate.value=".87";\n    status.textContent="AI narration uses an installed US English voice. Show the transcript or open the existing recording if needed.";\n    function finish(message){status.textContent=message;pause.disabled=true;stop.disabled=true;pause.textContent="Pause audio";}\n    const play = btn("Play local AI narration",()=>{\n      if(!synth){finish("The local voice engine is unavailable. Use the transcript or existing recording.");return;}\n      const ok=synth.start(exam.listening.transcript,{rate:Number(rate.value),\n       onStart:voice=>{status.textContent=voice.name+" · on-device US AI narration.";},\n       onEnd:()=>finish("Playback finished."),onAbort:()=>finish("Playback stopped."),\n       onError:reason=>finish(reason==="unavailable"?"No supported US English voice is installed. Use the transcript or existing recording.":"Playback failed. Use the transcript or existing recording.")});\n      if(ok){pause.disabled=false;stop.disabled=false;pause.textContent="Pause audio";status.textContent="Starting your device voice…";}\n    });\n    const pause=btn("Pause audio",()=>{const resume=pause.textContent==="Resume audio";const ok=resume?synth?.resume():synth?.pause();if(ok){pause.textContent=resume?"Pause audio":"Resume audio";status.textContent=resume?"Playback resumed.":"Playback paused.";}}, "btn secondary");\n    const stop=btn("Stop audio",()=>{synth?.abort();finish("Playback stopped.");},"btn secondary");\n    pause.disabled=stop.disabled=true;\n    const existing=node("a",{class:"btn secondary",href:"../exam-audio/det-workbook-"+String(exam.id).padStart(2,"0")+"-audio.mp3",target:"_blank",rel:"noopener noreferrer",text:"Open existing AI MP3 (new tab)"});\n    panel.append(node("div", { class: "actions" }, play,pause,stop,rate,reveal,existing), status, transcript);\n  }' + det[end:]
+    dh=(base/'practice/index.html').read_text()
+    matches=re.findall(r'<script defer src="\./practice\.js(?:\?[^"]*)?"></script>',dh)
+    assert len(matches)==1,matches
+    dh=swap(dh,matches[0],prefix+f'\n  <script defer src="./practice.js?v={digest(det.encode())[:12]}"></script>')
+    write('practice/practice.js',det);write('practice/index.html',dh)
+    a=json.loads((base/'practice/exams.json').read_text());b=json.loads((base/'exam-forms.json').read_text())
+    for x in a:
+     f=next(k for k in b if k['id']==f'det-workbook-{x["id"]:02}')
+     audio=[z for y in f['sections'] for z in y.get('stimuli',[]) if z.get('audio')]
+     assert len(audio)==1 and audio[0]['text']==x['listening']['transcript']
+     expected=f'exam-audio/det-workbook-{x["id"]:02}-audio.mp3'
+     assert audio[0]['audio'].endswith(expected) and (base/expected).exists()
+
+    for path, wanted in {'assets/esl-local-voice.js': '72e6b7b03bb29037eb710dcc6f517b4f78dcbf74d475906370519480669d397c', 'assets/index-af0557abe4eb.js': 'b07bfffd2cdc3c03dfe4bf6aed1cbbfa53f7897e16fab1e7b8a57b54df14dd31', 'index.html': '780175d57dea7d6952c539998211e7a6fcbe1ae7eb921d63418391c8517191cf', 'phrasal-verbs/index.html': '1a51dd542a1d0a1ddfc3473e94164faa485072df19ce4cd642a71f6878b616b6', 'phrasal-verbs/reader.js': '88788f2408f40d3e2d2d8bf17463a5ed3eb8cab98dd29ed4e0badee8eb1bb7c5', 'practice/index.html': 'dd25722a74eb3247cb03eef86485a61a7ea89a409da17fe03023aecb77817212', 'practice/practice.js': '427884a9ef5ea4d534e7dd7f87936a33cde61d2ff123ded101dda175220447e9'}.items():
+        if sha256((base/path).read_bytes()).hexdigest()!=wanted:
+            raise ValueError("Narration output changed: "+path)
+    print("Verified optional local narration on three entry surfaces",flush=True)
+
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, default=Path("_site"))
@@ -333,6 +429,7 @@ def main():
     apply_golden_exam_overlay(root, output)
     apply_globalistihdam_palette(root, output)
     apply_human_reading_shelf(root, output)
+    apply_local_narration(root, output)
 
 
 if __name__ == "__main__":
