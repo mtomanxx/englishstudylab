@@ -210,7 +210,17 @@ def apply_human_reading_shelf(root, output):
         raise ValueError("Reviewed human-reading shelf changed")
     route = output / "human-reading"
     route.mkdir()
-    (route / "index.html").write_bytes(shelf)
+    marker = b'<label for="type">'
+    if shelf.count(marker) != 1:
+        raise ValueError("Unexpected shelf link anchor")
+    link = b'<p><a href="voice/">Compare a human recording with optional on-device AI narration</a></p>'
+    (route / "index.html").write_bytes(shelf.replace(marker, link + marker))
+    voice = (root / "book-overlay" / "human-reading" / "voice" / "index.html").read_bytes()
+    if hashlib.sha256(voice).hexdigest() != "9e152eb8c325b3062d604a864cd82299edf5cb906433e12140c693fde1af00ee":
+        raise ValueError("Reviewed voice comparison changed")
+    comparison = route / "voice"
+    comparison.mkdir()
+    (comparison / "index.html").write_bytes(voice)
     for name, prefix in (("index.html", ""), ("practice/index.html", "../"), ("phrasal-verbs/index.html", "../")):
         page = output / name
         html = page.read_bytes()

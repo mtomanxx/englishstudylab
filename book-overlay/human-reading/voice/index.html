@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>English Study Lab | Try a narration voice</title>
+<style>
+*{box-sizing:border-box}:root{background:#f8f7ed;color:#102e31;font:1rem/1.55 system-ui,sans-serif}body{margin:0}header{background:#102e31;color:#fff5ce;padding:2rem max(1rem,6vw)}h1{font:700 clamp(2.15rem,6vw,3.5rem)/1.08 Georgia,serif;margin:.2rem 0}header p{color:#ffd464;font-weight:700;margin:0}main{width:min(92vw,47rem);margin:1.4rem auto 3rem}section{border:1px solid #879d91;border-radius:.55rem;background:#fffdf3;padding:1rem 1.2rem;margin:1rem 0}blockquote{margin:.8rem 0;padding:.7rem 1rem;background:#e6eddf;border-left:4px solid #b08525}label{display:block;margin:.5rem 0 .2rem;font-weight:700}select,button{font:inherit;color:#102e31;border-radius:.35rem;border:1px solid #74897a;min-height:44px;padding:.35rem .6rem;max-width:100%}button{background:#ffd464;font-weight:700}button+button{background:#fffbec}button:disabled{opacity:.58}a{color:#19534b;text-underline-offset:.2em}:focus-visible{outline:3px solid #895900;outline-offset:4px}.row{display:flex;gap:.6rem;flex-wrap:wrap;margin:.65rem 0}
+</style>
+<header><p>ENGLISH STUDY LAB</p><h1>Try a narration voice</h1></header>
+<main>
+<p>Compare a real human recording and AI narration of the same human-written text.</p>
+<section aria-label="Reading">
+<strong>Oscar Wilde, “The Selfish Giant”</strong>
+<blockquote>Every afternoon, as they were coming from school, the children used to go and play in the Giant’s garden.</blockquote>
+<p><a href="https://www.gutenberg.org/cache/epub/902/pg902-images.html">Read at Project Gutenberg</a> · <a href="https://librivox.org/the-happy-prince-and-other-tales-by-oscar-wilde/">Listen to Joy Chan, track 03</a></p>
+</section>
+<section aria-label="AI narration">
+<label for="voice">On-device US English voice</label>
+<select id="voice"><option value="">Checking installed voices…</option></select>
+<label for="pace">Reading pace</label><select id="pace"><option value="0.94">Natural pace</option><option value="0.84">Slower practice pace</option></select>
+<div class="row"><button id="play" type="button" disabled>Play AI narration</button><button id="stop" type="button" disabled>Stop</button></div>
+<p id="status" role="status">Checking for installed US English voices. Names are shown as your device provides them.</p>
+<p>When your device reports a voice as Premium or Enhanced, it appears first. Voice quality depends on your device. Nothing is sent to an external narration service.</p>
+</section><p><a href="../">Back to the human reading shelf</a></p></main>
+<script>
+(() => {
+const ss=window.speechSynthesis, by=id=>document.getElementById(id), dropdown=by('voice'), play=by('play'), stop=by('stop'), status=by('status');
+const passage='Every afternoon, as they were coming from school, the children used to go and play in the Giant’s garden.';
+let voices=[], serial=0, current;
+const priority = name => /premium|enhanced|natural|neural|studio/i.test(name) ? 1 : 0;
+function refresh(){
+ const old=dropdown.value;voices=ss?.getVoices().filter(v=>v.localService && /^en[-_]US$/i.test(v.lang)).sort((a,b)=>priority(b.name)-priority(a.name)||a.name.localeCompare(b.name))??[];
+ dropdown.replaceChildren();
+ if(!voices.length){dropdown.add(new Option('No on-device US English voice detected',''));play.disabled=true;status.textContent='No on-device US English voice is available. Try the human recording above.';return;}
+ for(const v of voices)dropdown.add(new Option(v.name,v.voiceURI));
+ if(voices.some(v=>v.voiceURI===old))dropdown.value=old;
+ play.disabled=false;status.textContent='Choose a voice, then select Play. No voice starts automatically.';
+}
+play.addEventListener('click',()=>{
+ const v=voices.find(o=>o.voiceURI===dropdown.value); if(!v)return;
+ const id=++serial; ss.cancel();
+ current=new SpeechSynthesisUtterance(passage);current.voice=v;current.lang='en-US';current.rate=Number(by('pace').value);
+ current.onstart=()=>{if(id===serial){status.textContent='Playing AI narration: '+v.name;stop.disabled=false;}};
+ current.onend=()=>{if(id===serial){status.textContent='Finished.';stop.disabled=true;}};
+ current.onerror=()=>{if(id===serial){status.textContent='This voice could not play. Choose another voice or the human recording.';stop.disabled=true;}};
+ ss.speak(current);
+});
+stop.addEventListener('click',()=>{serial++;ss.cancel();stop.disabled=true;status.textContent='Stopped.';});
+if(ss)ss.addEventListener('voiceschanged',refresh);
+refresh();
+})()
+</script></html>
