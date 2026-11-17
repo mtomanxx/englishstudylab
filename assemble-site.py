@@ -201,6 +201,31 @@ def apply_globalistihdam_palette(root, output):
         page.write_bytes(markup.replace(b"</head>", tag.encode("ascii") + b"\n</head>"))
 
 
+def apply_human_reading_shelf(root, output):
+    """Add the reviewed human-authored reading and human narration resource shelf."""
+    import re
+
+    shelf = (root / "book-overlay" / "human-reading" / "index.html").read_bytes()
+    if hashlib.sha256(shelf).hexdigest() != "b0fae392c74243833d1e599a45bb5784a7b1a6cc96cece6b2a08319270a7991f":
+        raise ValueError("Reviewed human-reading shelf changed")
+    route = output / "human-reading"
+    route.mkdir()
+    (route / "index.html").write_bytes(shelf)
+    for name, prefix in (("index.html", ""), ("practice/index.html", "../"), ("phrasal-verbs/index.html", "../")):
+        page = output / name
+        html = page.read_bytes()
+        notice = (
+            '<aside aria-label="Human reading and listening" '
+            'style="background:#e6eddf;color:#102e31;margin:0;padding:.65rem max(1rem,calc((100% - 68rem)/2));font:600 1rem/1.45 system-ui,sans-serif">'
+            f'<a style="color:#102e31;text-decoration:underline;text-underline-offset:.2em" href="{prefix}human-reading/">'
+            'Read and listen with human voices</a></aside>'
+        ).encode("utf-8")
+        markup, count = re.subn(rb"(<body(?:\s[^>]*)?>)", lambda m: m[1] + notice, html, flags=re.I)
+        if count != 1:
+            raise ValueError(f"Unexpected human-reading entry point: {name}")
+        page.write_bytes(markup)
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, default=Path("_site"))
@@ -297,6 +322,7 @@ def main():
     apply_phrasal_overlay(root, output)
     apply_golden_exam_overlay(root, output)
     apply_globalistihdam_palette(root, output)
+    apply_human_reading_shelf(root, output)
 
 
 if __name__ == "__main__":
